@@ -13,9 +13,20 @@
 #add-image img {
   width: 20px;
   height: 20px;
+  padding: 0.1rem;
+  border-radius: 5px;
 }
 
 #clear img {
-  width: 15px;
-  height: 15px;
+  width: 17px;
+  height: 17px;
+  padding: 0.1rem;
+  border-radius: 5px;
+}
+
+#confirm img:hover,
+#add-image img:hover,
+#clear img:hover {
+  cursor: pointer;
+  background-color: rgb(155, 158, 161);
 }
