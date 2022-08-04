@@ -1,9 +1,27 @@
 #area-container {
   width: 80vw;
-  margin: auto;
+  height: 90vh;
+  margin: 1rem auto 0;
+}
+
+#area-container button,
+#area-container input {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  font-family: inherit;
+}
+
+#area-container input {
+  font-size: 1rem;
+  color: #ffffff;
 }
 
 .background-container {
+  position: absolute;
+  left: 50vw;
+  bottom: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

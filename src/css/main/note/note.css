@@ -1,0 +1,21 @@
+#note-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  background-color: rgb(44, 43, 43);
+  width: 25vw;
+  padding: 1rem;
+  margin: auto;
+}
+
+#confirm img,
+#add-image img {
+  width: 20px;
+  height: 20px;
+}
+
+#clear img {
+  width: 15px;
+  height: 15px;
+}

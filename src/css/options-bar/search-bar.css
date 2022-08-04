@@ -8,6 +8,10 @@
   background-color: rgb(170, 170, 170);
 }
 
+.search-bar {
+  background-color: rgb(44, 43, 43);
+}
+
 .search-bar img {
   width: 30px;
   height: 30px;
@@ -21,6 +25,11 @@
   cursor: pointer;
   opacity: 0.3;
   background-color: rgb(117, 117, 117);
+}
+
+#close-btn {
+  width: 20px;
+  height: 20px;
 }
 
 #search {
