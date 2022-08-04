@@ -1,0 +1,35 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  padding: 0 1rem;
+  width: 40vw;
+  background-color: rgb(170, 170, 170);
+}
+
+.search-bar img {
+  width: 30px;
+  height: 30px;
+  padding: 4px;
+  border-radius: 5px;
+  transition-property: all;
+  transition-duration: 0.5s;
+}
+
+.search-bar img:hover {
+  cursor: pointer;
+  opacity: 0.3;
+  background-color: rgb(117, 117, 117);
+}
+
+input {
+  margin: 0 1rem;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  width: 30vw;
+  height: 50px;
+  font-family: inherit;
+  font-size: 1rem;
+}

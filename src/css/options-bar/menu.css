@@ -1,0 +1,16 @@
+.menu-btn {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+#menu {
+  width: 25px;
+  height: 25px;
+}
+
+#menu:hover {
+  cursor: pointer;
+  opacity: 0.3;
+}

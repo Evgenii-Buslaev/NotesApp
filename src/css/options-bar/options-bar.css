@@ -1,0 +1,20 @@
+#options-bar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
+  margin-top: 1rem;
+}
+
+.menu-logo-part {
+  display: flex;
+  justify-content: space-evenly;
+  width: 20vw;
+}
+
+.search-bar-mode-part {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 75vw;
+}

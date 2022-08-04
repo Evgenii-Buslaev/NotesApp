@@ -4,21 +4,45 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- For layout work I connect styles via link. later gonna use webpack -->
+    <!-- general -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/options-bar.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <!-- options-bar -->
+    <link rel="stylesheet" href="css/options-bar/options-bar.css" />
+    <link rel="stylesheet" href="css/options-bar/heading.css" />
+    <link rel="stylesheet" href="css/options-bar/menu.css" />
+    <link rel="stylesheet" href="css/options-bar/search-bar.css" />
+    <link rel="stylesheet" href="css/options-bar/mode.css" />
+
     <title>Заметки</title>
   </head>
   <body>
     <header>
       <div id="options-bar">
-        <button class="menu">
-          <img id="menu" src="icons/options-bar/menu.png" alt="menu icon" />
-        </button>
-        <img id="logo" src="icons/options-bar/logo.png" alt="logo image" />
-        <h1>Ваши Заметки</h1>
-        <div class="search-bar">
-          <img src="icons/options-bar/search.png" alt="magnifier icon" />
-          <input type="text" placeholder="Поиск" />
+        <div class="menu-logo-part">
+          <button class="menu-btn">
+            <img id="menu" src="icons/options-bar/menu.png" alt="menu icon" />
+          </button>
+          <div class="notes-heading">
+            <img id="logo" src="icons/options-bar/logo.png" alt="logo image" />
+            <h3>Заметки</h3>
+          </div>
         </div>
-        <img id="mode" src="icons/options-bar/mode/dark.png" alt="mode icon" />
+        <div class="search-bar-mode-part">
+          <div class="search-bar">
+            <img src="icons/options-bar/search.png" alt="magnifier icon" />
+            <input type="text" placeholder="Поиск" />
+          </div>
+          <img
+            id="mode"
+            src="icons/options-bar/mode/dark.png"
+            alt="mode icon"
+          />
+        </div>
       </div>
     </header>
   </body>

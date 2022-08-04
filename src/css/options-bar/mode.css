@@ -1,0 +1,9 @@
+#mode {
+  width: 25px;
+  height: 25px;
+}
+
+#mode:hover {
+  cursor: pointer;
+  opacity: 0.3;
+}
