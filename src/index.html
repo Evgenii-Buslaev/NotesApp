@@ -9,7 +9,6 @@
     <!-- general -->
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/fonts.css" />
-    <link rel="stylesheet" href="css/options-bar.css" />
     <link rel="stylesheet" href="css/index.css" />
     <!-- options-bar -->
     <link rel="stylesheet" href="css/options-bar/options-bar.css" />
@@ -35,7 +34,12 @@
         <div class="search-bar-mode-part">
           <div class="search-bar">
             <img src="icons/options-bar/search.png" alt="magnifier icon" />
-            <input type="text" placeholder="Поиск" />
+            <input id="search" type="text" placeholder="Поиск" />
+            <img
+              id="close-btn"
+              src="icons/options-bar/close.png"
+              alt="mode icon"
+            />
           </div>
           <img
             id="mode"
@@ -45,5 +49,54 @@
         </div>
       </div>
     </header>
+    <main>
+      <section id="menu-container">
+        <section class="storage">
+          <img
+            id="storage-img"
+            src="icons/storage/storage.png"
+            alt="storage image"
+          />
+        </section>
+        <section class="notifications">
+          <img
+            id="notifications-img"
+            src="icons/notification/alarm.png"
+            alt="notification image"
+          />
+        </section>
+        <section class="recycle-bin">
+          <img
+            id="recycle-bin-img"
+            src="icons/recycle-bin/recycle-bin.png"
+            alt="recycle-bin image"
+          />
+        </section>
+      </section>
+      <section class="area-container">
+        <!--   <div id="note-container">
+          <input type="text" placeholder="Заметка..." />
+          <button id="confirm">
+            <img src="icons/note-input/confirm.png" alt="confirm icon" />
+          </button>
+          <button id="add-image">
+            <img src="icons/note-input/add-image.png" alt="add-image icon" />
+          </button>
+          <button id="clear">
+            <img
+              id="close-btn"
+              src="icons/options-bar/close.png"
+              alt="mode icon"
+            />
+          </button>
+        </div> -->
+        <img
+          id="storage-img"
+          src="icons/storage/storage.png"
+          alt="storage image"
+        />
+        <p>Здесь будут Ваши заметки.</p>
+      </section>
+    </main>
   </body>
 </html>

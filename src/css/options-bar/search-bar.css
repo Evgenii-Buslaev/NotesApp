@@ -1,5 +1,6 @@
 .search-bar {
   display: flex;
+  justify-content: center;
   align-items: center;
   border-radius: 15px;
   padding: 0 1rem;
@@ -22,7 +23,7 @@
   background-color: rgb(117, 117, 117);
 }
 
-input {
+#search {
   margin: 0 1rem;
   appearance: none;
   border: none;
