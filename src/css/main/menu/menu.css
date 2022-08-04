@@ -1,0 +1,32 @@
+#menu-container {
+  padding: 2rem 0 0 1.5rem;
+  width: 20vw;
+  height: 90vh;
+}
+
+.storage,
+.notifications,
+.recycle-bin {
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 10px 5px 2em / 20px 25px 30%;
+}
+
+.storage:hover,
+.notifications:hover,
+.recycle-bin:hover {
+  cursor: pointer;
+  background-color: rgb(117, 117, 117);
+}
+
+.menu-heading {
+  margin-left: 1rem;
+}
+
+#storage-img,
+#notifications-img,
+#recycle-bin-img {
+  width: 30px;
+  height: 30px;
+}

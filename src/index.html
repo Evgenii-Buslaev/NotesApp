@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="css/options-bar/menu.css" />
     <link rel="stylesheet" href="css/options-bar/search-bar.css" />
     <link rel="stylesheet" href="css/options-bar/mode.css" />
+    <!-- menu container -->
+    <link rel="stylesheet" href="css/main/main.css" />
+    <link rel="stylesheet" href="css/main/menu/menu.css" />
+    <link rel="stylesheet" href="css/main/area/area.css" />
 
     <title>Заметки</title>
   </head>
@@ -57,6 +61,7 @@
             src="icons/storage/storage.png"
             alt="storage image"
           />
+          <h4 class="menu-heading">Заметки</h4>
         </section>
         <section class="notifications">
           <img
@@ -64,6 +69,7 @@
             src="icons/notification/alarm.png"
             alt="notification image"
           />
+          <h4 class="menu-heading">Уведомления</h4>
         </section>
         <section class="recycle-bin">
           <img
@@ -71,9 +77,10 @@
             src="icons/recycle-bin/recycle-bin.png"
             alt="recycle-bin image"
           />
+          <h4 class="menu-heading">Корзина</h4>
         </section>
       </section>
-      <section class="area-container">
+      <section id="area-container">
         <!--   <div id="note-container">
           <input type="text" placeholder="Заметка..." />
           <button id="confirm">
@@ -90,12 +97,14 @@
             />
           </button>
         </div> -->
-        <img
-          id="storage-img"
-          src="icons/storage/storage.png"
-          alt="storage image"
-        />
-        <p>Здесь будут Ваши заметки.</p>
+        <div class="background-container">
+          <img
+            id="storage"
+            src="icons/storage/storage.png"
+            alt="storage image"
+          />
+          <p>Здесь будут Ваши заметки.</p>
+        </div>
       </section>
     </main>
   </body>

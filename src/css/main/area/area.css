@@ -1,0 +1,20 @@
+#area-container {
+  width: 80vw;
+  margin: auto;
+}
+
+.background-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 20vw;
+}
+
+#storage {
+  margin: 0 auto 1rem;
+  width: 10vw;
+  height: 10vw;
+  opacity: 0.4;
+}
