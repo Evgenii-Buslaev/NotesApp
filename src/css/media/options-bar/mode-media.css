@@ -1,0 +1,7 @@
+@media (max-width: 500px) {
+  .mode {
+    width: 25vw;
+    height: auto;
+    text-align: center;
+  }
+}

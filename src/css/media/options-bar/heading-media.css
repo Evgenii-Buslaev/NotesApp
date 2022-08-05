@@ -1,0 +1,17 @@
+@media (max-width: 1400px) {
+  h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .notes-heading {
+    width: 15vw;
+  }
+}
+@media (max-width: 500px) {
+  .notes-heading {
+    flex-direction: column;
+    width: 25vw;
+  }
+}

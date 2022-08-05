@@ -1,0 +1,6 @@
+@media (max-width: 500px) {
+  #menu-btn {
+    text-align: start;
+    width: 20vw;
+  }
+}

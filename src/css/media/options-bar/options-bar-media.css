@@ -1,0 +1,35 @@
+@media (max-width: 1000px) {
+  .search-bar-mode-part {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50vw;
+  }
+  .menu-logo-part {
+    display: flex;
+    justify-content: space-evenly;
+    width: 30vw;
+  }
+}
+
+@media (max-width: 680px) {
+  .menu-logo-part {
+    width: 35vw;
+  }
+  .search-bar-mode-part {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 500px) {
+  #options-bar {
+    flex-direction: column;
+  }
+  .menu-logo-part,
+  .search-bar-mode-part {
+    justify-content: space-between;
+    align-items: space-between;
+    width: 80vw;
+    margin: auto;
+  }
+}
