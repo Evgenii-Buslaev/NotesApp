@@ -19,14 +19,12 @@
 }
 
 .background-container {
-  /*  left: 50vw;
-  bottom: 40vh; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 4rem auto;
-  width: 20vw;
+  width: 60vw;
 }
 
 #storage {
