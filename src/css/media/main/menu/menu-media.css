@@ -1,0 +1,18 @@
+@media (max-width: 1020px) {
+  .menu-heading {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 1020px) {
+  .menu-heading {
+    font-size: 0;
+    width: 0;
+    opacity: 0;
+  }
+  .storage,
+  .notifications,
+  .recycle-bin {
+    width: 50px;
+  }
+}
