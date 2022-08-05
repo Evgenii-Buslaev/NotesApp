@@ -1,0 +1,31 @@
+@media (max-width: 920px) {
+  .note {
+    width: 50vw;
+    height: 30vh;
+  }
+  .note-value {
+    display: flex;
+    width: 40vw;
+    justify-content: space-between;
+  }
+  #note-text {
+    width: 35vw;
+    height: 20vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .note {
+    width: 70vw;
+    height: 30vh;
+  }
+  .note-value {
+    display: flex;
+    width: 60vw;
+    justify-content: space-between;
+  }
+  #note-text {
+    width: 50vw;
+    height: 20vh;
+  }
+}

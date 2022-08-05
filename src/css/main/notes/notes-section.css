@@ -1,7 +1,7 @@
 .notes {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 1rem;
+  padding: 0 1rem 1rem;
   height: auto;
   width: 100%;
 }
