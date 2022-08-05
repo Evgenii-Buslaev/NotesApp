@@ -1,0 +1,32 @@
+#note-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  background-color: rgb(44, 43, 43);
+  width: 25vw;
+  padding: 1rem;
+  margin: auto;
+}
+
+#confirm img,
+#add-image img {
+  width: 20px;
+  height: 20px;
+  padding: 0.1rem;
+  border-radius: 5px;
+}
+
+#clear img {
+  width: 17px;
+  height: 17px;
+  padding: 0.1rem;
+  border-radius: 5px;
+}
+
+#confirm img:hover,
+#add-image img:hover,
+#clear img:hover {
+  cursor: pointer;
+  background-color: rgb(155, 158, 161);
+}

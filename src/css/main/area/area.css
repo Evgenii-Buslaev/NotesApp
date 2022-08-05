@@ -19,14 +19,13 @@
 }
 
 .background-container {
-  position: absolute;
-  left: 50vw;
-  bottom: 40vh;
+  /*  left: 50vw;
+  bottom: 40vh; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: auto;
+  margin: 4rem auto;
   width: 20vw;
 }
 
