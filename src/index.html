@@ -35,6 +35,11 @@
 
     <!-- menu -->
     <link rel="stylesheet" href="css/media/main/menu/menu-media.css" />
+    <!-- note-input -->
+    <link
+      rel="stylesheet"
+      href="css/media/main/note-input/note-input-media.css"
+    />
 
     <!-- favicon -->
     <link
@@ -118,20 +123,18 @@
       </section>
       <section id="area-container">
         <div id="note-container">
-          <input type="text" placeholder="Заметка..." />
-          <button id="confirm">
-            <img src="icons/note-input/confirm.png" alt="confirm icon" />
-          </button>
-          <button id="add-image">
-            <img src="icons/note-input/add-image.png" alt="add-image icon" />
-          </button>
-          <button id="clear">
-            <img
-              id="close-btn"
-              src="icons/options-bar/close.png"
-              alt="mode icon"
-            />
-          </button>
+          <input id="input-text" type="text" placeholder="Заметка..." />
+          <div class="input-btns">
+            <button id="confirm">
+              <img src="icons/note-input/confirm.png" alt="confirm icon" />
+            </button>
+            <button id="add-image">
+              <img src="icons/note-input/add-image.png" alt="add-image icon" />
+            </button>
+            <button id="clear">
+              <img src="icons/options-bar/close.png" alt="mode icon" />
+            </button>
+          </div>
         </div>
         <!--         <div class="background-container">
           <img

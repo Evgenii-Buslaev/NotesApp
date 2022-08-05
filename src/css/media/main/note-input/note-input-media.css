@@ -1,0 +1,29 @@
+@media (max-width: 1400px) {
+  #input-text {
+    width: 30vw;
+  }
+}
+
+@media (max-width: 1000px) {
+  #note-container {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+  #input-text {
+    width: 40vw;
+  }
+  .input-btns {
+    width: 50vw;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #note-container {
+    width: 70vw;
+  }
+  #input-text {
+    width: 65vw;
+  }
+}
