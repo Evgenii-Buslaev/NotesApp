@@ -5,11 +5,8 @@
   border-radius: 15px;
   padding: 0 1rem;
   width: 40vw;
-  background-color: rgb(170, 170, 170);
-}
-
-.search-bar {
-  background-color: rgb(44, 43, 43);
+  background-color: rgb(94, 93, 93);
+  width: 25vw;
 }
 
 .search-bar img {

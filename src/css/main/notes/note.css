@@ -8,7 +8,15 @@
   width: 25vw;
   height: 20vh;
   padding: 1rem;
-  margin: auto;
+  margin: 1rem auto 0;
+}
+
+.note-functions {
+  opacity: 0;
+}
+
+.note:hover .note-functions {
+  opacity: 1;
 }
 
 .note img {
