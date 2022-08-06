@@ -24,6 +24,7 @@
 @media (max-width: 500px) {
   #options-bar {
     flex-direction: column;
+    margin: 0.5rem auto 0;
   }
   .menu-logo-part,
   .search-bar-mode-part {
