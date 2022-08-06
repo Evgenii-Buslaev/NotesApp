@@ -6,9 +6,14 @@
   border-radius: 10px;
   background-color: rgb(168, 175, 140);
   width: 25vw;
-  height: 20vh;
+  height: auto;
   padding: 1rem;
   margin: 1rem auto 0;
+}
+
+#note-text {
+  height: auto;
+  overflow-wrap: break-word;
 }
 
 .note-functions {
