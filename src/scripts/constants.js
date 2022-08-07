@@ -3,4 +3,6 @@ const noteElem = document.querySelector(".note");
 const noteValue = document.getElementById("input-text");
 const confirmNote = document.getElementById("confirm");
 
-export { notesContainer, noteElem, noteValue, confirmNote };
+let storage = [];
+
+export { notesContainer, noteElem, noteValue, confirmNote, storage };
