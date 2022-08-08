@@ -1,11 +1,10 @@
-/* export default class Note {
+export default class Note {
   constructor(value, noteElement, storage) {
     // note-object properties
     this.value = value;
     this._note = noteElement;
     this.id = Math.random();
     // after creating an element add it to storage
-    storage.push(this);
   }
 
   generateNote() {
@@ -18,11 +17,11 @@
     parent.appendChild(this.element);
   }
 
-   deleteNote(storage) {
+  /*  deleteNote(storage) {
     for (let i = 0; i < storage.length; i++) {
       if (storage[i].id === this.id) {
         storage.splice(i, 1);
       }
     }
-  }
-} */
+  } */
+}

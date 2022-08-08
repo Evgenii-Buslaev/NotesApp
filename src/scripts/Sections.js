@@ -10,8 +10,12 @@ export default class Sections {
     this._removedElems = [];
   }
 
-  renderBackground(parent, backgroundElement) {
-    parent.innerHTML = backgroundElement.outerHTML;
+  renderBackground(parent, backgroundElement, inputNode = "") {
+    if (inputNode !== "") {
+      parent.innerHTML = inputNode.outerHTML + backgroundElement.outerHTML;
+    } else {
+      parent.innerHTML = backgroundElement.outerHTML;
+    }
   }
 
   addNote(elem) {

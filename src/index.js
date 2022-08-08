@@ -1,25 +1,25 @@
-/* import Note from "./scripts/Note.js"; */
+import Note from "./scripts/Note.js";
 import Sections from "./scripts/Sections.js";
 
 // constants
 
 import {
-  /* notesContainer,
-  noteElem,
-  noteValue,
-  confirmNote,
-  storage, */
   menuBtns,
   menuCont,
   backgroundCont,
   storageBackground,
   notificationsBackground,
   removedElementsBackground,
+  notesContainer,
+  notesInputElem,
+  noteElem,
+  noteValue,
+  confirmNote,
 } from "./scripts/constants.js";
 
 // choosing section
 let sections = new Sections();
-sections.renderBackground(backgroundCont, storageBackground);
+sections.renderBackground(backgroundCont, storageBackground, notesInputElem);
 
 // menu-navigation
 menuCont.addEventListener("click", (event) => {
@@ -49,7 +49,11 @@ function renderBackgrounds(clickedElement) {
   backgroundCont.style.opacity = "0";
   if (clickedElement.classList.value.includes("storage")) {
     setTimeout(() => {
-      sections.renderBackground(backgroundCont, storageBackground);
+      sections.renderBackground(
+        backgroundCont,
+        storageBackground,
+        notesInputElem
+      );
       backgroundCont.style.opacity = "1";
     }, 500);
   }
