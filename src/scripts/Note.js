@@ -1,27 +1,17 @@
 export default class Note {
-  constructor(value, noteElement, storage) {
+  constructor(value, noteElement) {
     // note-object properties
     this.value = value;
     this._note = noteElement;
     this.id = Math.random();
-    // after creating an element add it to storage
   }
 
   generateNote() {
     this.element = this._note.cloneNode(true);
-    this.element.querySelector(".note-value").children[0].innerText =
-      this.value;
+    console.log(this.element);
   }
 
   renderNote(parent) {
     parent.appendChild(this.element);
   }
-
-  /*  deleteNote(storage) {
-    for (let i = 0; i < storage.length; i++) {
-      if (storage[i].id === this.id) {
-        storage.splice(i, 1);
-      }
-    }
-  } */
 }

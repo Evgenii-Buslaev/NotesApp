@@ -1,25 +1,26 @@
-import Note from "./scripts/Note.js";
 import Sections from "./scripts/Sections.js";
+import Note from "./scripts/Note.js";
 
 // constants
-
 import {
   menuBtns,
   menuCont,
-  backgroundCont,
+  areaCont,
   storageBackground,
   notificationsBackground,
   removedElementsBackground,
-  notesContainer,
   notesInputElem,
-  noteElem,
-  noteValue,
-  confirmNote,
+  noteCont,
 } from "./scripts/constants.js";
 
-// choosing section
+// default main area content
 let sections = new Sections();
-sections.renderBackground(backgroundCont, storageBackground, notesInputElem);
+sections.renderBackground(
+  areaCont,
+  storageBackground,
+  noteCont,
+  notesInputElem
+);
 
 // menu-navigation
 menuCont.addEventListener("click", (event) => {
@@ -46,40 +47,30 @@ menuCont.addEventListener("click", (event) => {
 
 // render backgrounds
 function renderBackgrounds(clickedElement) {
-  backgroundCont.style.opacity = "0";
+  areaCont.style.opacity = "0";
   if (clickedElement.classList.value.includes("storage")) {
     setTimeout(() => {
       sections.renderBackground(
-        backgroundCont,
+        areaCont,
         storageBackground,
+        noteCont,
         notesInputElem
       );
-      backgroundCont.style.opacity = "1";
+      areaCont.style.opacity = "1";
     }, 500);
   }
 
   if (clickedElement.classList.value.includes("notifications")) {
     setTimeout(() => {
-      sections.renderBackground(backgroundCont, notificationsBackground);
-      backgroundCont.style.opacity = "1";
+      sections.renderBackground(areaCont, notificationsBackground);
+      areaCont.style.opacity = "1";
     }, 500);
   }
 
   if (clickedElement.classList.value.includes("recycle-bin")) {
     setTimeout(() => {
-      sections.renderBackground(backgroundCont, removedElementsBackground);
-      backgroundCont.style.opacity = "1";
+      sections.renderBackground(areaCont, removedElementsBackground);
+      areaCont.style.opacity = "1";
     }, 500);
   }
 }
-
-// note from note-input
-/* confirmNote.addEventListener("click", () => {
-  let note = new Note(noteValue.value, noteElem, storage);
-  note.generateNote();
-  note.renderNote(notesContainer);
-  console.log(storage);
-
-  console.log(storage);
-});
- */
