@@ -1,4 +1,4 @@
-export default class Note {
+/* export default class Note {
   constructor(value, noteElement, storage) {
     // note-object properties
     this.value = value;
@@ -18,11 +18,11 @@ export default class Note {
     parent.appendChild(this.element);
   }
 
-  /*  deleteNote(storage) {
+   deleteNote(storage) {
     for (let i = 0; i < storage.length; i++) {
       if (storage[i].id === this.id) {
         storage.splice(i, 1);
       }
     }
-  } */
-}
+  }
+} */

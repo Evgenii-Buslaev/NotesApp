@@ -1,16 +1,26 @@
-import Note from "./scripts/Note.js";
+/* import Note from "./scripts/Note.js"; */
+import Sections from "./scripts/Sections.js";
 
 // constants
 
 import {
-  notesContainer,
+  /* notesContainer,
   noteElem,
   noteValue,
   confirmNote,
-  storage,
+  storage, */
   menuBtns,
   menuCont,
+  backgroundCont,
+  storageBackground,
+  notificationsBackground,
+  removedElementsBackground,
 } from "./scripts/constants.js";
+
+// choosing section
+
+let sections = new Sections();
+sections.renderBackground(backgroundCont, storageBackground);
 
 // menu-navigation
 menuCont.addEventListener("click", (event) => {
@@ -21,11 +31,33 @@ menuCont.addEventListener("click", (event) => {
         elem.classList.remove("active");
       }
     });
+
+    backgroundCont.style.opacity = "0";
+    if (event.target.classList.value.includes("storage")) {
+      setTimeout(() => {
+        sections.renderBackground(backgroundCont, storageBackground);
+        backgroundCont.style.opacity = "1";
+      }, 500);
+    }
+
+    if (event.target.classList.value.includes("notifications")) {
+      setTimeout(() => {
+        sections.renderBackground(backgroundCont, notificationsBackground);
+        backgroundCont.style.opacity = "1";
+      }, 500);
+    }
+
+    if (event.target.classList.value.includes("recycle-bin")) {
+      setTimeout(() => {
+        sections.renderBackground(backgroundCont, removedElementsBackground);
+        backgroundCont.style.opacity = "1";
+      }, 500);
+    }
   }
 });
 
 // note from note-input
-confirmNote.addEventListener("click", () => {
+/* confirmNote.addEventListener("click", () => {
   let note = new Note(noteValue.value, noteElem, storage);
   note.generateNote();
   note.renderNote(notesContainer);
@@ -33,3 +65,4 @@ confirmNote.addEventListener("click", () => {
 
   console.log(storage);
 });
+ */
