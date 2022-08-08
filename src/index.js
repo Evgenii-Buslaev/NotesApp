@@ -18,7 +18,6 @@ import {
 } from "./scripts/constants.js";
 
 // choosing section
-
 let sections = new Sections();
 sections.renderBackground(backgroundCont, storageBackground);
 
@@ -31,30 +30,42 @@ menuCont.addEventListener("click", (event) => {
         elem.classList.remove("active");
       }
     });
-
-    backgroundCont.style.opacity = "0";
-    if (event.target.classList.value.includes("storage")) {
-      setTimeout(() => {
-        sections.renderBackground(backgroundCont, storageBackground);
-        backgroundCont.style.opacity = "1";
-      }, 500);
-    }
-
-    if (event.target.classList.value.includes("notifications")) {
-      setTimeout(() => {
-        sections.renderBackground(backgroundCont, notificationsBackground);
-        backgroundCont.style.opacity = "1";
-      }, 500);
-    }
-
-    if (event.target.classList.value.includes("recycle-bin")) {
-      setTimeout(() => {
-        sections.renderBackground(backgroundCont, removedElementsBackground);
-        backgroundCont.style.opacity = "1";
-      }, 500);
-    }
+    renderBackgrounds(event.target);
+  } else {
+    event.target.parentNode.classList.toggle("active");
+    menuBtns.forEach((elem) => {
+      if (elem !== event.target.parentNode) {
+        elem.classList.remove("active");
+      }
+    });
+    renderBackgrounds(event.target.parentNode);
   }
 });
+
+// render backgrounds
+function renderBackgrounds(clickedElement) {
+  backgroundCont.style.opacity = "0";
+  if (clickedElement.classList.value.includes("storage")) {
+    setTimeout(() => {
+      sections.renderBackground(backgroundCont, storageBackground);
+      backgroundCont.style.opacity = "1";
+    }, 500);
+  }
+
+  if (clickedElement.classList.value.includes("notifications")) {
+    setTimeout(() => {
+      sections.renderBackground(backgroundCont, notificationsBackground);
+      backgroundCont.style.opacity = "1";
+    }, 500);
+  }
+
+  if (clickedElement.classList.value.includes("recycle-bin")) {
+    setTimeout(() => {
+      sections.renderBackground(backgroundCont, removedElementsBackground);
+      backgroundCont.style.opacity = "1";
+    }, 500);
+  }
+}
 
 // note from note-input
 /* confirmNote.addEventListener("click", () => {
