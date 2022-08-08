@@ -17,4 +17,12 @@ export default class Note {
   renderNote(parent) {
     parent.appendChild(this.element);
   }
+
+  /*  deleteNote(storage) {
+    for (let i = 0; i < storage.length; i++) {
+      if (storage[i].id === this.id) {
+        storage.splice(i, 1);
+      }
+    }
+  } */
 }
