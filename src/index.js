@@ -32,13 +32,15 @@ menuCont.addEventListener("click", (event) => {
     });
     renderBackgrounds(event.target);
   } else {
-    event.target.parentNode.classList.toggle("active");
-    menuBtns.forEach((elem) => {
-      if (elem !== event.target.parentNode) {
-        elem.classList.remove("active");
-      }
-    });
-    renderBackgrounds(event.target.parentNode);
+    if (event.target.id !== "menu-container") {
+      event.target.parentNode.classList.toggle("active");
+      menuBtns.forEach((elem) => {
+        if (elem !== event.target.parentNode) {
+          elem.classList.remove("active");
+        }
+      });
+      renderBackgrounds(event.target.parentNode);
+    }
   }
 });
 
