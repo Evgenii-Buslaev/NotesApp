@@ -6,21 +6,22 @@ import {
   menuBtns,
   menuCont,
   areaCont,
-  storageBackground,
+  storage,
   notificationsBackground,
   removedElementsBackground,
-  notesInputElem,
-  noteCont,
 } from "./scripts/constants.js";
 
 // default main area content
-let sections = new Sections();
-sections.renderBackground(
+let sections = new Sections(
   areaCont,
-  storageBackground,
-  noteCont,
-  notesInputElem
+  storage,
+  removedElementsBackground.outerHTML,
+  notificationsBackground.outerHTML,
+  () => {
+    console.log(1);
+  }
 );
+sections.renderStorageSection();
 
 // menu-navigation
 menuCont.addEventListener("click", (event) => {
@@ -50,26 +51,21 @@ function renderBackgrounds(clickedElement) {
   areaCont.style.opacity = "0";
   if (clickedElement.classList.value.includes("storage")) {
     setTimeout(() => {
-      sections.renderBackground(
-        areaCont,
-        storageBackground,
-        noteCont,
-        notesInputElem
-      );
+      sections.renderStorageSection();
       areaCont.style.opacity = "1";
     }, 500);
   }
 
   if (clickedElement.classList.value.includes("notifications")) {
     setTimeout(() => {
-      sections.renderBackground(areaCont, notificationsBackground);
+      sections.renderNotificationsSection();
       areaCont.style.opacity = "1";
     }, 500);
   }
 
   if (clickedElement.classList.value.includes("recycle-bin")) {
     setTimeout(() => {
-      sections.renderBackground(areaCont, removedElementsBackground);
+      sections.renderRemovedElemsSection();
       areaCont.style.opacity = "1";
     }, 500);
   }
