@@ -10,7 +10,7 @@ const notesInputElem = document.getElementById("note-container");
 const noteCont = document.querySelector(".notes");
 const storageBackground = document.getElementById("notes-background");
 
-const storage =
+let storage =
   notesInputElem.outerHTML + noteCont.outerHTML + storageBackground.outerHTML;
 
 const notificationsBackground = document.getElementById(

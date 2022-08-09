@@ -25,6 +25,9 @@ export function addNote(className) {
   document.getElementById("notes-background")?.remove();
 
   document.getElementById("input-text").value = "";
+
+  className._notesCollection.push(note);
+  console.log(className._notesCollection);
 }
 
 export function removeInput() {
