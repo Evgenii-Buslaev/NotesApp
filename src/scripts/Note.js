@@ -8,7 +8,7 @@ export default class Note {
 
   generateNote() {
     this.element = this._note.cloneNode(true);
-    console.log(this.element);
+    this.element.querySelector("p").innerText = this.value;
   }
 
   renderNote(parent) {

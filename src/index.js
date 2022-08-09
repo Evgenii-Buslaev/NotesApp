@@ -11,6 +11,9 @@ import {
   removedElementsBackground,
 } from "./scripts/constants.js";
 
+// handlers
+import { addNote } from "./scripts/handlers.js";
+
 // default main area content
 let sections = new Sections(
   areaCont,
@@ -18,10 +21,16 @@ let sections = new Sections(
   removedElementsBackground.outerHTML,
   notificationsBackground.outerHTML,
   () => {
-    console.log(1);
+    addNote(Note);
+  },
+  () => {},
+  () => {
+    document.getElementById("input-text").value = "";
   }
 );
+
 sections.renderStorageSection();
+sections._setStorageHandlers();
 
 // menu-navigation
 menuCont.addEventListener("click", (event) => {
@@ -52,6 +61,7 @@ function renderBackgrounds(clickedElement) {
   if (clickedElement.classList.value.includes("storage")) {
     setTimeout(() => {
       sections.renderStorageSection();
+      sections._setStorageHandlers();
       areaCont.style.opacity = "1";
     }, 500);
   }
