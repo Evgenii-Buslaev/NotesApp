@@ -12,7 +12,7 @@ import {
 } from "./scripts/constants.js";
 
 // handlers
-import { addNote } from "./scripts/handlers.js";
+import { addNote, removeInput } from "./scripts/handlers.js";
 
 // default main area content
 let sections = new Sections(
@@ -20,13 +20,8 @@ let sections = new Sections(
   storage,
   removedElementsBackground.outerHTML,
   notificationsBackground.outerHTML,
-  () => {
-    addNote(Note);
-  },
-  () => {},
-  () => {
-    document.getElementById("input-text").value = "";
-  }
+  () => addNote(Note),
+  removeInput
 );
 
 sections.renderStorageSection();
