@@ -15,10 +15,6 @@ export default class Sections {
 
     this._confirm = confirmHandler;
     this._clear = clearHandler;
-
-    this._storageElems = [];
-    this._notificationsElems = [];
-    this._removedElems = [];
   }
 
   _setStorageHandlers() {

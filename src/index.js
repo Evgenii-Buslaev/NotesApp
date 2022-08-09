@@ -18,10 +18,10 @@ import { addNote, removeInput } from "./scripts/handlers.js";
 let sections = new Sections(
   areaCont,
   storage,
-  removedElementsBackground.outerHTML,
   notificationsBackground.outerHTML,
+  removedElementsBackground.outerHTML,
   () => addNote(Note),
-  removeInput
+  () => removeInput()
 );
 
 sections.renderStorageSection();

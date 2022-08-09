@@ -3,6 +3,10 @@ let removedSample = {
 };
 
 export function addNote(className) {
+  if (document.getElementById("input-text").value === "") {
+    alert("Заметка не может быть пустой");
+    return;
+  }
   let note = new className(
     document.getElementById("input-text").value,
     document.querySelector(".note")
