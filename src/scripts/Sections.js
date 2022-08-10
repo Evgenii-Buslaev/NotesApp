@@ -1,7 +1,11 @@
+import Note from "../scripts/Note.js";
+import { renderSavedNotes } from "./handlers.js";
+
 export default class Sections {
   constructor(
     parent,
     storageSection,
+    fullfieldStorageSection,
     notificationsSection,
     recycleBinSection,
     confirmHandler,
@@ -10,6 +14,7 @@ export default class Sections {
     // html section elems
     this.parent = parent;
     this.storage = storageSection;
+    this.fullfieldStorage = fullfieldStorageSection;
     this.notifications = notificationsSection;
     this.recycleBin = recycleBinSection;
 
@@ -26,7 +31,12 @@ export default class Sections {
   }
 
   renderStorageSection() {
-    this.parent.innerHTML = this.storage;
+    if (Note._notesCollection.length === 0) {
+      this.parent.innerHTML = this.storage;
+    } else {
+      this.parent.innerHTML = this.fullfieldStorage;
+      renderSavedNotes();
+    }
   }
 
   renderNotificationsSection() {

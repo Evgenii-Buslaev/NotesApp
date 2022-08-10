@@ -7,6 +7,7 @@ import {
   menuCont,
   areaCont,
   storage,
+  fullfilledStorageSection,
   notificationsBackground,
   removedElementsBackground,
 } from "./scripts/constants.js";
@@ -18,6 +19,7 @@ import { addNote, removeInput } from "./scripts/handlers.js";
 let sections = new Sections(
   areaCont,
   storage,
+  fullfilledStorageSection,
   notificationsBackground.outerHTML,
   removedElementsBackground.outerHTML,
   () => addNote(Note),

@@ -5,13 +5,15 @@ const menuCont = document.getElementById("menu-container");
 // section elems
 const areaCont = document.getElementById("area-container");
 
-// storage
+// sections
 const notesInputElem = document.getElementById("note-container");
 const noteCont = document.querySelector(".notes");
 const storageBackground = document.getElementById("notes-background");
 
 let storage =
   notesInputElem.outerHTML + noteCont.outerHTML + storageBackground.outerHTML;
+
+let fullfilledStorageSection = notesInputElem.outerHTML + noteCont.outerHTML;
 
 const notificationsBackground = document.getElementById(
   "notifications-background"
@@ -25,6 +27,7 @@ export {
   menuCont,
   areaCont,
   storage,
+  fullfilledStorageSection,
   notificationsBackground,
   removedElementsBackground,
 };

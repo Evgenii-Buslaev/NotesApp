@@ -1,3 +1,5 @@
+import Note from "../scripts/Note.js";
+
 let removedSample = {
   removed: false,
 };
@@ -32,4 +34,21 @@ export function addNote(className) {
 
 export function removeInput() {
   document.getElementById("input-text").value = "";
+}
+
+export function renderSavedNotes() {
+  for (let i = 0; i < Note._notesCollection.length; i++) {
+    let noteSample;
+
+    if (i > 0) {
+      noteSample = document.querySelector(".note").cloneNode(true);
+      noteSample.querySelector("p").innerText = Note._notesCollection[i].value;
+      noteSample.id = Note._notesCollection[i].id;
+      document.querySelector(".notes").appendChild(noteSample);
+    } else {
+      noteSample = document.querySelector(".note");
+      noteSample.querySelector("p").innerText = Note._notesCollection[i].value;
+      noteSample.id = Note._notesCollection[i].id;
+    }
+  }
 }
