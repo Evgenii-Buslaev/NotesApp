@@ -17,11 +17,8 @@ export function addNote(className) {
   note.renderNote(document.querySelector(".notes"));
 
   let notesCollection = document.querySelectorAll(".note");
-  console.log(notesCollection);
-
-  if (removedSample.removed === false) {
+  if (className._notesCollection.length === 0) {
     notesCollection[0].remove();
-    removedSample.removed = true;
   }
 
   document.getElementById("notes-background")?.remove();
@@ -29,6 +26,13 @@ export function addNote(className) {
   document.getElementById("input-text").value = "";
 
   className._notesCollection.push(note);
+  if (localStorage.getItem("notes_collection")) {
+    localStorage.removeItem("notes_collection");
+  }
+  localStorage.setItem(
+    "notes_collection",
+    JSON.stringify(className._notesCollection)
+  );
   console.log(className._notesCollection);
 }
 
