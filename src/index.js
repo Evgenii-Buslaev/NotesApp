@@ -13,7 +13,13 @@ import {
 } from "./scripts/constants.js";
 
 // handlers
-import { addNote, removeInput } from "./scripts/handlers.js";
+import {
+  addNote,
+  removeInput,
+  moveHandler,
+  editHandler,
+  removeHandler,
+} from "./scripts/handlers.js";
 
 // default main area content
 let sections = new Sections(
@@ -30,7 +36,7 @@ sections.renderStorageSection();
 sections._setStorageHandlers();
 
 // working with localStorage
-/* localStorage.clear(); */
+localStorage.clear();
 
 window.addEventListener("load", () => {
   if (localStorage.getItem("notes_collection")) {

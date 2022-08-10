@@ -1,9 +1,5 @@
 import Note from "../scripts/Note.js";
 
-let removedSample = {
-  removed: false,
-};
-
 export function addNote(className) {
   if (document.getElementById("input-text").value === "") {
     alert("Заметка не может быть пустой");
@@ -11,10 +7,15 @@ export function addNote(className) {
   }
   let note = new className(
     document.getElementById("input-text").value,
-    document.querySelector(".note")
+    document.querySelector(".note"),
+    moveHandler,
+    editHandler,
+    removeHandler
   );
   note.generateNote();
   note.renderNote(document.querySelector(".notes"));
+  note._setHandlers();
+  console.log(note);
 
   let notesCollection = document.querySelectorAll(".note");
   if (className._notesCollection.length === 0) {
@@ -55,4 +56,15 @@ export function renderSavedNotes() {
       noteSample.id = Note._notesCollection[i].id;
     }
   }
+}
+export function moveHandler(note) {
+  console.log(1);
+}
+
+export function editHandler(note) {
+  console.log(1);
+}
+
+export function removeHandler(note) {
+  console.log(1);
 }
