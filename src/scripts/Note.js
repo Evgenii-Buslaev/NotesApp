@@ -1,3 +1,5 @@
+import { renderSavedItems } from "./handlers.js";
+
 export default class Note {
   static _notesCollection = [];
   static _notificationCollection = [];
@@ -54,9 +56,13 @@ export default class Note {
     Note._notificationCollection.push(this);
     for (let i = 0; i < Note._notesCollection.length; i++) {
       if (this.id === Note._notesCollection[i].id) {
+        Note._notesCollection[i].element.style.opacity = "0";
         Note._notesCollection.splice(i, 1);
       }
     }
+    setTimeout(() => {
+      renderSavedItems(Note._notesCollection);
+    }, 500);
   }
 
   editNote() {
@@ -71,10 +77,12 @@ export default class Note {
     Note._removedCollection.push(this);
     for (let i = 0; i < Note._notesCollection.length; i++) {
       if (this.id === Note._notesCollection[i].id) {
+        Note._notesCollection[i].element.style.opacity = "0";
         Note._notesCollection.splice(i, 1);
       }
     }
-    console.log(Note._notesCollection);
-    console.log(Note._removedCollection);
+    setTimeout(() => {
+      renderSavedItems(Note._notesCollection);
+    }, 500);
   }
 }

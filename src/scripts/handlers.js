@@ -44,20 +44,11 @@ export function renderSavedItems(itemsArray) {
   if (itemsArray !== Note._notesCollection) {
     document.getElementById("note-container").style.opacity = "0";
   }
-
+  document.querySelector(".notes").children[0].remove();
   for (let i = 0; i < itemsArray.length; i++) {
-    let noteSample;
-
-    if (i > 0) {
-      noteSample = document.querySelector(".note").cloneNode(true);
-      noteSample.querySelector("p").innerText = itemsArray[i].value;
-      noteSample.id = itemsArray[i].id;
-      document.querySelector(".notes").appendChild(noteSample);
-    } else {
-      noteSample = document.querySelector(".note");
-      noteSample.querySelector("p").innerText = itemsArray[i].value;
-      noteSample.id = itemsArray[i].id;
-    }
+    document.querySelector(".notes").appendChild(itemsArray[i].element);
+    itemsArray[i].element.style.opacity = "1";
+    itemsArray[i]._setHandlers();
   }
 }
 
