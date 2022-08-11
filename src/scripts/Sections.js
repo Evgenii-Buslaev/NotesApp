@@ -40,7 +40,15 @@ export default class Sections {
   }
 
   renderNotificationsSection() {
-    this.parent.innerHTML = this.notifications;
+    if (Note._notificationCollection.length === 0) {
+      this.parent.innerHTML = this.notifications;
+      console.log(Note._notificationCollection.length);
+    } else {
+      for (let i = 0; i < Note._notificationCollection.length; i++) {
+        this.parent.innerHTML =
+          Note._notificationCollection[i].element.outerHTML;
+      }
+    }
   }
 
   renderRemovedElemsSection() {

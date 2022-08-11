@@ -35,7 +35,7 @@ export default class Note {
         elem.addEventListener("click", this.pin_note);
       }
       if (elem.id === "to-notifications") {
-        elem.addEventListener("click", this.move_note);
+        elem.addEventListener("click", this.moveToNotification.bind(this));
       }
       if (elem.id === "delete") {
         elem.addEventListener("click", this.remove_note);
@@ -51,7 +51,14 @@ export default class Note {
   }
 
   moveToNotification() {
-    _notificationCollection.push(this);
+    Note._notificationCollection.push(this);
+    for (let i = 0; i < Note._notesCollection.length; i++) {
+      if (this.id === Note._notesCollection[i].id) {
+        Note._notesCollection.splice(i, 1);
+      }
+    }
+    console.log(Note._notesCollection);
+    console.log(Note._notificationCollection);
   }
 
   editNote() {
