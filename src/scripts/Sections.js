@@ -1,5 +1,5 @@
 import Note from "../scripts/Note.js";
-import { renderSavedNotes } from "./handlers.js";
+import { renderSavedItems } from "./handlers.js";
 
 export default class Sections {
   constructor(
@@ -35,7 +35,7 @@ export default class Sections {
       this.parent.innerHTML = this.storage;
     } else {
       this.parent.innerHTML = this.fullfieldStorage;
-      renderSavedNotes();
+      renderSavedItems(Note._notesCollection);
     }
   }
 
@@ -44,10 +44,8 @@ export default class Sections {
       this.parent.innerHTML = this.notifications;
       console.log(Note._notificationCollection.length);
     } else {
-      for (let i = 0; i < Note._notificationCollection.length; i++) {
-        this.parent.innerHTML =
-          Note._notificationCollection[i].element.outerHTML;
-      }
+      this.parent.innerHTML = this.fullfieldStorage;
+      renderSavedItems(Note._notificationCollection);
     }
   }
 
@@ -56,9 +54,8 @@ export default class Sections {
       this.parent.innerHTML = this.recycleBin;
       console.log(Note._removedCollection.length);
     } else {
-      for (let i = 0; i < Note._removedCollection.length; i++) {
-        this.parent.innerHTML = Note._removedCollection[i].element.outerHTML;
-      }
+      this.parent.innerHTML = this.fullfieldStorage;
+      renderSavedItems(Note._removedCollection);
     }
   }
 }

@@ -57,8 +57,6 @@ export default class Note {
         Note._notesCollection.splice(i, 1);
       }
     }
-    console.log(Note._notesCollection);
-    console.log(Note._notificationCollection);
   }
 
   editNote() {
