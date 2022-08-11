@@ -8,14 +8,13 @@ export function addNote(className) {
   let note = new className(
     document.getElementById("input-text").value,
     document.querySelector(".note"),
+    pinHandler,
     moveHandler,
-    editHandler,
     removeHandler
   );
   note.generateNote();
   note.renderNote(document.querySelector(".notes"));
   note._setHandlers();
-  console.log(note);
 
   let notesCollection = document.querySelectorAll(".note");
   if (className._notesCollection.length === 0) {
@@ -57,14 +56,19 @@ export function renderSavedNotes() {
     }
   }
 }
+
+export function pinHandler(note) {
+  console.log("pin");
+}
+
 export function moveHandler(note) {
-  console.log(1);
+  console.log("move");
 }
 
 export function editHandler(note) {
-  console.log(1);
+  console.log("edit");
 }
 
 export function removeHandler(note) {
-  console.log(1);
+  console.log("remove");
 }

@@ -6,7 +6,8 @@ export default class Note {
   constructor(
     value,
     noteElement,
-    _toNotifHandler,
+    _pinHandler,
+    _moveHandler,
     _editHandler,
     _removeHandler
   ) {
@@ -16,23 +17,33 @@ export default class Note {
     this.id = Math.random();
 
     // handlers
-    this.move_note = _toNotifHandler;
-    this.edit_note = _editHandler;
+    this.pin_note = _pinHandler;
+    this.move_note = _moveHandler;
     this.remove_note = _removeHandler;
-  }
-
-  _setHandlers() {
-    document.getElementById(this.id).addEventListener("click", this.move_note);
-    document.getElementById(this.id).addEventListener("click", this.edit_note);
-    document
-      .getElementById(this.id)
-      .addEventListener("click", this.remove_note);
   }
 
   generateNote() {
     this.element = this._note.cloneNode(true);
     this.element.querySelector("p").innerText = this.value;
     this.element.id = this.id;
+  }
+
+  _setHandlers() {
+    this.buttons = this.element.querySelectorAll("div");
+    this.buttons.forEach((elem) => {
+      if (elem.id === "pin-btn") {
+        elem.addEventListener("click", this.pin_note);
+      }
+      if (elem.id === "to-notifications") {
+        elem.addEventListener("click", this.move_note);
+      }
+      if (elem.id === "delete") {
+        elem.addEventListener("click", this.remove_note);
+      }
+      if (elem.id === "edit") {
+        elem.addEventListener("click", this.editNote.bind(this));
+      }
+    });
   }
 
   renderNote(parent) {
@@ -44,7 +55,11 @@ export default class Note {
   }
 
   editNote() {
-    console.log(1);
+    this.element.querySelector("p").setAttribute("contenteditable", "true");
+    this.element.querySelector("p").addEventListener("blur", () => {
+      this.element.querySelector("p").removeAttribute("contenteditable");
+      this.value = this.element.querySelector("p").innerText;
+    });
   }
 
   removeNote() {

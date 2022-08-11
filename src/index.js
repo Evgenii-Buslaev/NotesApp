@@ -13,13 +13,7 @@ import {
 } from "./scripts/constants.js";
 
 // handlers
-import {
-  addNote,
-  removeInput,
-  moveHandler,
-  editHandler,
-  removeHandler,
-} from "./scripts/handlers.js";
+import { addNote, removeInput } from "./scripts/handlers.js";
 
 // default main area content
 let sections = new Sections(
