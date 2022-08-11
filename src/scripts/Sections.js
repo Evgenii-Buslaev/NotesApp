@@ -52,6 +52,13 @@ export default class Sections {
   }
 
   renderRemovedElemsSection() {
-    this.parent.innerHTML = this.recycleBin;
+    if (Note._removedCollection.length === 0) {
+      this.parent.innerHTML = this.recycleBin;
+      console.log(Note._removedCollection.length);
+    } else {
+      for (let i = 0; i < Note._removedCollection.length; i++) {
+        this.parent.innerHTML = Note._removedCollection[i].element.outerHTML;
+      }
+    }
   }
 }

@@ -38,7 +38,7 @@ export default class Note {
         elem.addEventListener("click", this.moveToNotification.bind(this));
       }
       if (elem.id === "delete") {
-        elem.addEventListener("click", this.remove_note);
+        elem.addEventListener("click", this.removeNote.bind(this));
       }
       if (elem.id === "edit") {
         elem.addEventListener("click", this.editNote.bind(this));
@@ -70,6 +70,13 @@ export default class Note {
   }
 
   removeNote() {
-    _removedCollection.push(this);
+    Note._removedCollection.push(this);
+    for (let i = 0; i < Note._notesCollection.length; i++) {
+      if (this.id === Note._notesCollection[i].id) {
+        Note._notesCollection.splice(i, 1);
+      }
+    }
+    console.log(Note._notesCollection);
+    console.log(Note._removedCollection);
   }
 }
