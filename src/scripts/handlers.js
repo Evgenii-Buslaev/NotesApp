@@ -7,10 +7,7 @@ export function addNote(className) {
   }
   let note = new className(
     document.getElementById("input-text").value,
-    document.querySelector(".note"),
-    pinHandler,
-    moveHandler,
-    removeHandler
+    document.querySelector(".note")
   );
   note.generateNote();
   note.renderNote(document.querySelector(".notes"));
@@ -33,7 +30,6 @@ export function addNote(className) {
     "notes_collection",
     JSON.stringify(className._notesCollection)
   );
-  console.log(className._notesCollection);
 }
 
 export function removeInput() {
@@ -44,26 +40,16 @@ export function renderSavedItems(itemsArray) {
   if (itemsArray !== Note._notesCollection) {
     document.getElementById("note-container").style.opacity = "0";
   }
-  document.querySelector(".notes").children[0].remove();
+
+  document.querySelector(".notes").innerHTML = "";
   for (let i = 0; i < itemsArray.length; i++) {
     document.querySelector(".notes").appendChild(itemsArray[i].element);
     itemsArray[i].element.style.opacity = "1";
     itemsArray[i]._setHandlers();
   }
+  console.log(document.querySelector(".notes").children);
 }
 
 export function pinHandler(note) {
   console.log("pin");
-}
-
-export function moveHandler(note) {
-  console.log("move");
-}
-
-export function editHandler(note) {
-  console.log("edit");
-}
-
-export function removeHandler(note) {
-  console.log("remove");
 }
