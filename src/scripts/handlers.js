@@ -1,4 +1,5 @@
 import Note from "../scripts/Note.js";
+import { storageBtn } from "./constants.js";
 
 // input part
 export function addNote(className) {
@@ -43,6 +44,10 @@ export function removeInput() {
 export function renderSavedItems(itemsArray) {
   if (itemsArray !== Note._notesCollection) {
     document.getElementById("note-container").style.opacity = "0";
+  } else {
+    if (!itemsArray.length) {
+      storageBtn.click();
+    }
   }
   document.querySelector(".notes").innerHTML = "";
   for (let i = 0; i < itemsArray.length; i++) {

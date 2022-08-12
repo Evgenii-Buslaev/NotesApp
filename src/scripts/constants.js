@@ -12,6 +12,7 @@ const storageBackground = document.getElementById("notes-background");
 
 let storage =
   notesInputElem.outerHTML + noteCont.outerHTML + storageBackground.outerHTML;
+const storageBtn = document.querySelector(".storage");
 
 let fullfilledStorageSection = notesInputElem.outerHTML + noteCont.outerHTML;
 
@@ -25,6 +26,7 @@ const removedElementsBackground = document.getElementById(
 export {
   menuBtns,
   menuCont,
+  storageBtn,
   areaCont,
   storage,
   fullfilledStorageSection,
