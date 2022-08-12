@@ -44,14 +44,11 @@ export function renderSavedItems(itemsArray) {
   if (itemsArray !== Note._notesCollection) {
     document.getElementById("note-container").style.opacity = "0";
   }
-
   document.querySelector(".notes").innerHTML = "";
   for (let i = 0; i < itemsArray.length; i++) {
     document.querySelector(".notes").appendChild(itemsArray[i].element);
     itemsArray[i].element.style.opacity = "1";
-    itemsArray[i]._setHandlers();
   }
-  console.log(document.querySelector(".notes").children);
 }
 
 export function moveItemsBetweenSections(
