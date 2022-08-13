@@ -6,6 +6,7 @@ import Note from "./scripts/Note.js";
 // variables
 import {
   body,
+  modeIcon,
   note,
   menuBtns,
   menuCont,
@@ -20,10 +21,8 @@ import {
 import { addNote, removeInput } from "./scripts/handlers.js";
 
 // default mode
-let mode = new Mode('dark', 'light', { body, note })
+let mode = new Mode('dark', 'light',  body, modeIcon, note )
 mode._setHandler()
-/* mode.changeMode()
-mode.renderMode() */
 
 // default main area content
 let sections = new Sections(

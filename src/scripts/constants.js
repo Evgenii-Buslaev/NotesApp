@@ -1,5 +1,6 @@
 // elems for mode 
 const body = document.querySelector('body')
+const modeIcon = document.querySelector('img[id="mode"]')
 const note = document.querySelector('.note')
 
 // menu buttons
@@ -28,7 +29,8 @@ const removedElementsBackground = document.getElementById(
 );
 
 export {
-  body, 
+  body,
+  modeIcon, 
   note,
   menuBtns,
   menuCont,
