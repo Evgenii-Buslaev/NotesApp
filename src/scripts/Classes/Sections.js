@@ -1,5 +1,5 @@
-import Note from "../scripts/Note.js";
-import { renderSavedItems } from "./handlers.js";
+import Note from "./Note.js";
+import { renderSavedItems } from "../handlers/notes.js";
 
 export default class Sections {
   constructor(
