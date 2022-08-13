@@ -4,10 +4,6 @@ import Note from "./scripts/Note.js";
 
 // variables
 import {
-  body,
-  modeIcon,
-  notes,
-  searchBar,
   menuBtns,
   menuCont,
   areaCont,
@@ -46,9 +42,9 @@ window.addEventListener("load", () => {
     Note._notesCollection = JSON.parse(
       localStorage.getItem("notes_collection")
     );
-    console.log(Note._notesCollection);
     sections.renderStorageSection();
     sections._setStorageHandlers();
+    mode.renderMode();
   }
 });
 
@@ -59,8 +55,10 @@ function renderBackgrounds(clickedElement) {
   areaCont.style.opacity = "0";
   if (clickedElement.classList.value.includes("storage")) {
     setTimeout(() => {
+      clickedElement.classList.add("active");
       sections.renderStorageSection();
       sections._setStorageHandlers();
+      mode.renderMode();
       areaCont.style.opacity = "1";
     }, 500);
   }
