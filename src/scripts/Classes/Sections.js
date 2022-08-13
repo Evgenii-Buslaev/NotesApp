@@ -42,7 +42,6 @@ export default class Sections {
   renderNotificationsSection() {
     if (Note._notificationCollection.length === 0) {
       this.parent.innerHTML = this.notifications;
-      console.log(Note._notificationCollection.length);
     } else {
       this.parent.innerHTML = this.fullfieldStorage;
       renderSavedItems(Note._notificationCollection);
@@ -52,7 +51,6 @@ export default class Sections {
   renderRemovedElemsSection() {
     if (Note._removedCollection.length === 0) {
       this.parent.innerHTML = this.recycleBin;
-      console.log(Note._removedCollection.length);
     } else {
       this.parent.innerHTML = this.fullfieldStorage;
       renderSavedItems(Note._removedCollection);
