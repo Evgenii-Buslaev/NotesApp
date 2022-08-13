@@ -1,14 +1,9 @@
 export default class Mode {
-  constructor(dark, light, body, icon, notes) {
+  constructor(dark, light, modeHandler) {
     // state
     this.dark_mode = dark;
     this.light_mode = light;
     this.current = light;
-
-    // changing elements
-    this.body_element = body;
-    this.icon_element = icon;
-    this.note_elements = notes;
 
     // values
     this.light_background_colors = {
@@ -21,6 +16,9 @@ export default class Mode {
       src: "icons/options-bar/mode/light.png",
       items_color: "rgb(67, 94, 112)",
     };
+
+    // handlers
+    this.mode_handler = modeHandler;
   }
 
   _setHandler() {
@@ -41,26 +39,6 @@ export default class Mode {
   }
 
   renderMode() {
-    if (this.current === this.dark_mode) {
-      this.body_element.style.backgroundColor =
-        this.dark_background_colors.body;
-
-      for (let i = 0; i < this.note_elements.length; i++) {
-        this.note_elements[i].style.backgroundColor =
-          this.dark_background_colors.items_color;
-      }
-
-      this.icon_element.src = this.dark_background_colors.src;
-    } else {
-      this.body_element.style.backgroundColor =
-        this.light_background_colors.body;
-
-      for (let i = 0; i < this.note_elements.length; i++) {
-        this.note_elements[i].style.backgroundColor =
-          this.light_background_colors.items_color;
-      }
-
-      this.icon_element.src = this.light_background_colors.src;
-    }
+    this.mode_handler(this.current, this.dark_mode, this);
   }
 }

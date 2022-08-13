@@ -1,5 +1,38 @@
 import Note from "../scripts/Note.js";
-import { storageBtn } from "./constants.js";
+import { body, modeIcon, searchBar, storageBtn, notes } from "./constants.js";
+
+// mode part
+export function renderModeHadler(currentMode, dark, mode) {
+  if (currentMode === dark) {
+    body.style.backgroundColor = mode.dark_background_colors.body;
+
+    for (let i = 0; i < notes.length; i++) {
+      notes[i].style.backgroundColor = mode.dark_background_colors.items_color;
+    }
+
+    modeIcon.src = mode.dark_background_colors.src;
+
+    if (window.screen.width <= 870) {
+      searchBar.style.backgroundColor = mode.dark_background_colors.body;
+    } else {
+      searchBar.style.backgroundColor = "rgb(94, 93, 93)";
+    }
+  } else {
+    body.style.backgroundColor = mode.light_background_colors.body;
+
+    for (let i = 0; i < notes.length; i++) {
+      notes[i].style.backgroundColor = mode.light_background_colors.items_color;
+    }
+
+    modeIcon.src = mode.light_background_colors.src;
+
+    if (document.documentElement.clientWidth <= 870) {
+      searchBar.style.backgroundColor = mode.light_background_colors.body;
+    } else {
+      searchBar.style.backgroundColor = "rgb(94, 93, 93)";
+    }
+  }
+}
 
 // input part
 export function addNote(className) {
@@ -39,23 +72,7 @@ export function removeInput() {
   document.getElementById("input-text").value = "";
 }
 
-// items part
-
-export function renderSavedItems(itemsArray) {
-  if (itemsArray !== Note._notesCollection) {
-    document.getElementById("note-container").style.opacity = "0";
-  } else {
-    if (!itemsArray.length) {
-      storageBtn.click();
-    }
-  }
-  document.querySelector(".notes").innerHTML = "";
-  for (let i = 0; i < itemsArray.length; i++) {
-    document.querySelector(".notes").appendChild(itemsArray[i].element);
-    itemsArray[i].element.style.opacity = "1";
-  }
-}
-
+// sections part
 export function moveItemsBetweenSections(
   fromSectionOne,
   fromSectionTwo,
@@ -79,6 +96,22 @@ export function moveItemsBetweenSections(
   setTimeout(() => {
     renderSavedItems(Note.changedState);
   }, 500);
+}
+
+// items part
+export function renderSavedItems(itemsArray) {
+  if (itemsArray !== Note._notesCollection) {
+    document.getElementById("note-container").style.opacity = "0";
+  } else {
+    if (!itemsArray.length) {
+      storageBtn.click();
+    }
+  }
+  document.querySelector(".notes").innerHTML = "";
+  for (let i = 0; i < itemsArray.length; i++) {
+    document.querySelector(".notes").appendChild(itemsArray[i].element);
+    itemsArray[i].element.style.opacity = "1";
+  }
 }
 
 export function pinHandler(note) {

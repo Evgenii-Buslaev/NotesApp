@@ -7,6 +7,7 @@ import {
   body,
   modeIcon,
   notes,
+  searchBar,
   menuBtns,
   menuCont,
   areaCont,
@@ -17,10 +18,10 @@ import {
 } from "./scripts/constants.js";
 
 // handlers
-import { addNote, removeInput } from "./scripts/handlers.js";
+import { addNote, removeInput, renderModeHadler } from "./scripts/handlers.js";
 
 // default mode
-let mode = new Mode("dark", "light", body, modeIcon, notes);
+let mode = new Mode("dark", "light", renderModeHadler);
 mode._setHandler();
 
 // default main area content

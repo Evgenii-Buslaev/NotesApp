@@ -1,8 +1,8 @@
 // elems for mode
 const body = document.querySelector("body");
+const searchBar = document.querySelector(".search-bar");
 const modeIcon = document.querySelector('img[id="mode"]');
 const notes = document.getElementsByClassName("note");
-console.log(notes);
 
 // menu buttons
 const menuBtns = document.querySelectorAll(".menu-nav-btn");
@@ -33,6 +33,7 @@ export {
   body,
   modeIcon,
   notes,
+  searchBar,
   menuBtns,
   menuCont,
   storageBtn,
