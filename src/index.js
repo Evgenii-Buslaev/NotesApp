@@ -1,8 +1,12 @@
+import Mode from "./scripts/Mode.js"
 import Sections from "./scripts/Sections.js";
 import Note from "./scripts/Note.js";
 
+
 // variables
 import {
+  body,
+  note,
   menuBtns,
   menuCont,
   areaCont,
@@ -14,6 +18,12 @@ import {
 
 // handlers
 import { addNote, removeInput } from "./scripts/handlers.js";
+
+// default mode
+let mode = new Mode('dark', 'light', { body, note })
+mode._setHandler()
+/* mode.changeMode()
+mode.renderMode() */
 
 // default main area content
 let sections = new Sections(

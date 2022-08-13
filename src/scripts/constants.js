@@ -1,3 +1,7 @@
+// elems for mode 
+const body = document.querySelector('body')
+const note = document.querySelector('.note')
+
 // menu buttons
 const menuBtns = document.querySelectorAll(".menu-nav-btn");
 const menuCont = document.getElementById("menu-container");
@@ -24,6 +28,8 @@ const removedElementsBackground = document.getElementById(
 );
 
 export {
+  body, 
+  note,
   menuBtns,
   menuCont,
   storageBtn,
