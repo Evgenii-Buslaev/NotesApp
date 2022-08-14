@@ -25,11 +25,11 @@ export default class Note {
       if (elem.id === "pin-btn") {
         elem.addEventListener("click", this.pin_note);
       }
-      if (elem.classList.value === "collection-button") {
-        elem.addEventListener("click", this.moveToFolder.bind(this));
-      }
-      if (elem.classList.value === "storage-button") {
+      if (elem.id === "to-storage") {
         elem.addEventListener("click", this.moveToMain.bind(this));
+      }
+      if (elem.id === "to-collection") {
+        elem.addEventListener("click", this.moveToFolder.bind(this));
       }
       if (elem.id === "delete") {
         elem.addEventListener("click", this.removeNote.bind(this));

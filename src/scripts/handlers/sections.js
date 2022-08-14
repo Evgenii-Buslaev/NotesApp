@@ -32,26 +32,22 @@ export function moveItemsBetweenSections(
       Note.changedState = fromSectionTwo;
     }
   }
-  console.log(Note._notesCollection);
-  console.log(Note._folderCollection);
-  console.log(Note._removedCollection);
   setTimeout(() => {
-    // buttons and methods
+    // buttons appearance
     if (targetSection == Note._folderCollection) {
-      this.element.querySelector(".collection-button").children[0].src =
-        "icons/storage/storage.png";
-      this.element.children[0].classList.remove("collection-button");
-      this.element.children[0].classList.add("storage-button");
+      this.element.querySelector("#to-collection").style.display = "none";
+      this.element.querySelector("#to-storage").style.display = "block";
+      this.element.querySelector("#delete").style.display = "block";
     }
     if (targetSection == Note._notesCollection) {
-      this.element.querySelector(".collection-button").children[0].src =
-        "icons/collection/collection.png";
-      this.element.children[0].classList.remove("storage-button");
-      this.element.children[0].classList.add("collection-button");
+      this.element.querySelector("#to-collection").style.display = "block";
+      this.element.querySelector("#delete").style.display = "block";
+      this.element.querySelector("#to-storage").style.display = "none";
     }
     if (targetSection == Note._removedCollection) {
-      this.element.querySelector(".note-functions").children[0].style.display =
-        "none";
+      this.element.querySelector("#to-storage").style.display = "block";
+      this.element.querySelector("#to-collection").style.display = "block";
+      this.element.querySelector("#delete").style.display = "none";
     }
 
     renderSavedItems(Note.changedState);

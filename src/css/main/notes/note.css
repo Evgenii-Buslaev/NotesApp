@@ -51,8 +51,11 @@
   margin: 1rem auto 0;
 }
 
+#to-storage {
+  display: none;
+}
+
 #to-collection,
-#to-storage,
 #edit,
 #delete,
 #pin-btn img {
