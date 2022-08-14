@@ -1,6 +1,7 @@
 @media (max-width: 920px) {
   .note {
     width: 50vw;
+    margin: 0.5rem auto 0;
   }
   .note-functions {
     margin: 1rem auto;

@@ -43,7 +43,7 @@ export function removeInput() {
 // items part
 export function renderSavedItems(itemsArray) {
   if (itemsArray !== Note._notesCollection) {
-    document.getElementById("note-container").style.opacity = "0";
+    document.getElementById("note-container").style.display = "none";
   } else {
     if (!itemsArray.length) {
       storageBtn.click();

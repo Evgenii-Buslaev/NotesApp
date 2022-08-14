@@ -23,3 +23,14 @@ window.addEventListener("load", () => {
     mode.renderMode();
   }
 });
+
+// working with layout
+let checking = setInterval(() => {
+  if (window.innerWidth < 920) {
+    mode.renderMode();
+  }
+  if (window.innerWidth <= 500) {
+    mode.renderMode();
+    clearInterval(checking);
+  }
+}, 500);
