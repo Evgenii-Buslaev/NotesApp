@@ -22,9 +22,7 @@ const storageBtn = document.querySelector(".storage");
 
 let fullfilledStorageSection = notesInputElem.outerHTML + noteCont.outerHTML;
 
-const notificationsBackground = document.getElementById(
-  "notifications-background"
-);
+const collectionBackground = document.getElementById("collection-background");
 const removedElementsBackground = document.getElementById(
   "recycle-bin-background"
 );
@@ -40,6 +38,6 @@ export {
   areaCont,
   storage,
   fullfilledStorageSection,
-  notificationsBackground,
+  collectionBackground,
   removedElementsBackground,
 };

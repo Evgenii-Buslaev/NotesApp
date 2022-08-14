@@ -6,7 +6,7 @@ import {
   areaCont,
   storage,
   fullfilledStorageSection,
-  notificationsBackground,
+  collectionBackground,
   removedElementsBackground,
 } from "./constants.js";
 
@@ -19,7 +19,7 @@ let sections = new Sections(
   areaCont,
   storage,
   fullfilledStorageSection,
-  notificationsBackground.outerHTML,
+  collectionBackground.outerHTML,
   removedElementsBackground.outerHTML,
   () => addNote(Note),
   () => removeInput()

@@ -11,7 +11,7 @@
     opacity: 0;
   }
   .storage,
-  .notifications,
+  .collection,
   .recycle-bin {
     width: 50px;
   }

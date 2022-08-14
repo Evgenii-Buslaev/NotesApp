@@ -27,7 +27,9 @@
   width: 60vw;
 }
 
-#storage {
+#storage,
+#collection,
+#removed {
   margin: 0 auto 1rem;
   width: 10vw;
   height: 10vw;

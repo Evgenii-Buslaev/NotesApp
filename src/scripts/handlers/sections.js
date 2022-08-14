@@ -69,9 +69,9 @@ export function renderBackgrounds(clickedElement) {
     }, 500);
   }
 
-  if (clickedElement.classList.value.includes("notifications")) {
+  if (clickedElement.classList.value.includes("collection")) {
     setTimeout(() => {
-      sections.renderNotificationsSection();
+      sections.renderCollectionSection();
       mode.renderMode();
       areaCont.style.opacity = "1";
     }, 500);

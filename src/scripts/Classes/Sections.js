@@ -6,7 +6,7 @@ export default class Sections {
     parent,
     storageSection,
     fullfieldStorageSection,
-    notificationsSection,
+    collectionSection,
     recycleBinSection,
     confirmHandler,
     clearHandler
@@ -15,7 +15,7 @@ export default class Sections {
     this.parent = parent;
     this.storage = storageSection;
     this.fullfieldStorage = fullfieldStorageSection;
-    this.notifications = notificationsSection;
+    this.notifications = collectionSection;
     this.recycleBin = recycleBinSection;
 
     this._confirm = confirmHandler;
@@ -39,12 +39,12 @@ export default class Sections {
     }
   }
 
-  renderNotificationsSection() {
-    if (Note._notificationCollection.length === 0) {
+  renderCollectionSection() {
+    if (Note._folderCollection.length === 0) {
       this.parent.innerHTML = this.notifications;
     } else {
       this.parent.innerHTML = this.fullfieldStorage;
-      renderSavedItems(Note._notificationCollection);
+      renderSavedItems(Note._folderCollection);
     }
   }
 

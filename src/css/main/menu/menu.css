@@ -5,7 +5,7 @@
 }
 
 .storage,
-.notifications,
+.collection,
 .recycle-bin {
   padding: 0.5rem 0 0.5rem 0.5rem;
   display: flex;
@@ -14,7 +14,7 @@
 }
 
 .storage:hover,
-.notifications:hover,
+.collection:hover,
 .recycle-bin:hover {
   cursor: pointer;
   background-color: rgb(117, 117, 117);
@@ -30,7 +30,7 @@
 }
 
 #storage-img,
-#notifications-img,
+#collection-img,
 #recycle-bin-img {
   width: 30px;
   height: 30px;

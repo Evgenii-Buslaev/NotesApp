@@ -51,14 +51,14 @@
   margin: 1rem auto 0;
 }
 
-#to-notifications,
+#to-collection,
 #edit,
 #delete,
 #pin-btn img {
   border-radius: 5px;
 }
 
-#to-notifications:hover,
+#to-collection:hover,
 #edit:hover,
 #delete:hover,
 #pin-btn img:hover {

@@ -1,6 +1,6 @@
 export default class Note {
   static _notesCollection = [];
-  static _notificationCollection = [];
+  static _folderCollection = [];
   static _removedCollection = [];
   static changedState = Note._notesCollection;
 
@@ -25,8 +25,8 @@ export default class Note {
       if (elem.id === "pin-btn") {
         elem.addEventListener("click", this.pin_note);
       }
-      if (elem.id === "to-notifications") {
-        elem.addEventListener("click", this.moveToNotification.bind(this));
+      if (elem.id === "to-collection") {
+        elem.addEventListener("click", this.moveToFolder.bind(this));
       }
       if (elem.id === "delete") {
         elem.addEventListener("click", this.removeNote.bind(this));
@@ -49,18 +49,18 @@ export default class Note {
     });
   }
 
-  moveToNotification() {
+  moveToFolder() {
     this.movement_handler(
       Note._notesCollection,
       Note._removedCollection,
-      Note._notificationCollection
+      Note._folderCollection
     );
   }
 
   removeNote() {
     this.movement_handler(
       Note._notesCollection,
-      Note._notificationCollection,
+      Note._folderCollection,
       Note._removedCollection
     );
   }
