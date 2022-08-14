@@ -25,8 +25,11 @@ export default class Note {
       if (elem.id === "pin-btn") {
         elem.addEventListener("click", this.pin_note);
       }
-      if (elem.id === "to-collection") {
+      if (elem.classList.value === "collection-button") {
         elem.addEventListener("click", this.moveToFolder.bind(this));
+      }
+      if (elem.classList.value === "storage-button") {
+        elem.addEventListener("click", this.moveToMain.bind(this));
       }
       if (elem.id === "delete") {
         elem.addEventListener("click", this.removeNote.bind(this));
@@ -54,6 +57,14 @@ export default class Note {
       Note._notesCollection,
       Note._removedCollection,
       Note._folderCollection
+    );
+  }
+
+  moveToMain() {
+    this.movement_handler(
+      Note._folderCollection,
+      Note._removedCollection,
+      Note._notesCollection
     );
   }
 

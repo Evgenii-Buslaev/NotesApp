@@ -52,6 +52,7 @@
 }
 
 #to-collection,
+#to-storage,
 #edit,
 #delete,
 #pin-btn img {
@@ -59,6 +60,7 @@
 }
 
 #to-collection:hover,
+#to-storage:hover,
 #edit:hover,
 #delete:hover,
 #pin-btn img:hover {

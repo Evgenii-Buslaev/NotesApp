@@ -16,6 +16,8 @@ export function moveItemsBetweenSections(
   targetSection
 ) {
   targetSection.push(this);
+
+  // deleting from static props of Note class
   for (let i = 0; i < fromSectionOne.length; i++) {
     if (this.id === fromSectionOne[i].id) {
       fromSectionOne[i].element.style.opacity = "0";
@@ -30,7 +32,28 @@ export function moveItemsBetweenSections(
       Note.changedState = fromSectionTwo;
     }
   }
+  console.log(Note._notesCollection);
+  console.log(Note._folderCollection);
+  console.log(Note._removedCollection);
   setTimeout(() => {
+    // buttons and methods
+    if (targetSection == Note._folderCollection) {
+      this.element.querySelector(".collection-button").children[0].src =
+        "icons/storage/storage.png";
+      this.element.children[0].classList.remove("collection-button");
+      this.element.children[0].classList.add("storage-button");
+    }
+    if (targetSection == Note._notesCollection) {
+      this.element.querySelector(".collection-button").children[0].src =
+        "icons/collection/collection.png";
+      this.element.children[0].classList.remove("storage-button");
+      this.element.children[0].classList.add("collection-button");
+    }
+    if (targetSection == Note._removedCollection) {
+      this.element.querySelector(".note-functions").children[0].style.display =
+        "none";
+    }
+
     renderSavedItems(Note.changedState);
   }, 500);
 }
