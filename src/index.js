@@ -12,8 +12,8 @@ sections.renderStorageSection();
 sections._setStorageHandlers();
 
 // working with localStorage
-/* localStorage.clear(); */
-
+/* 
+localStorage.clear(); */
 window.addEventListener("load", () => {
   // creating note items from localStorage
   if (localStorage.getItem("itemsArray")) {
@@ -28,6 +28,10 @@ window.addEventListener("load", () => {
       note.generateNote();
       note.renderNote(document.querySelector(".notes"));
       note._setHandlers();
+
+      note.element.querySelector("#to-collection").style.display = "block";
+      note.element.querySelector("#delete").style.display = "block";
+      note.element.querySelector("#to-storage").style.display = "none";
     }
 
     Note._folderCollection = JSON.parse(localStorage.getItem("itemsArray"))[1];
@@ -41,6 +45,10 @@ window.addEventListener("load", () => {
       note.generateNote();
       note.renderNote(document.querySelector(".notes"));
       note._setHandlers();
+
+      note.element.querySelector("#to-collection").style.display = "none";
+      note.element.querySelector("#to-storage").style.display = "block";
+      note.element.querySelector("#delete").style.display = "block";
     }
 
     Note._removedCollection = JSON.parse(localStorage.getItem("itemsArray"))[2];
@@ -54,6 +62,10 @@ window.addEventListener("load", () => {
       note.generateNote();
       note.renderNote(document.querySelector(".notes"));
       note._setHandlers();
+
+      note.element.querySelector("#to-storage").style.display = "block";
+      note.element.querySelector("#to-collection").style.display = "block";
+      note.element.querySelector("#delete").style.display = "none";
     }
 
     sections.renderStorageSection();

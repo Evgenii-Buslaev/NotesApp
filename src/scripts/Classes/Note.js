@@ -65,7 +65,6 @@ export default class Note {
       this.value = this.element.querySelector("p").innerText;
     });
     Note.refreshLocalStorage();
-    console.log(localStorage.getItem("itemsArray"));
   }
 
   moveToFolder() {
@@ -75,7 +74,6 @@ export default class Note {
       Note._folderCollection
     );
     Note.refreshLocalStorage();
-    console.log(localStorage.getItem("itemsArray"));
   }
 
   moveToMain() {
@@ -85,7 +83,6 @@ export default class Note {
       Note._notesCollection
     );
     Note.refreshLocalStorage();
-    console.log(localStorage.getItem("itemsArray"));
   }
 
   removeNote() {
@@ -95,6 +92,5 @@ export default class Note {
       Note._removedCollection
     );
     Note.refreshLocalStorage();
-    console.log(localStorage.getItem("itemsArray"));
   }
 }
