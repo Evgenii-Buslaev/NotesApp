@@ -1,3 +1,5 @@
+import { sections } from "../singletons.js";
+
 export default class Note {
   static _notesCollection = [];
   static _folderCollection = [];
@@ -16,6 +18,11 @@ export default class Note {
         Note._removedCollection,
       ])
     );
+    console.log([
+      Note._notesCollection,
+      Note._folderCollection,
+      Note._removedCollection,
+    ]);
   }
 
   constructor(value, noteElement, _movementHandler) {
@@ -23,6 +30,7 @@ export default class Note {
     this.value = value;
     this._note = noteElement;
     this.id = Math.random();
+    this.current_section = "notes";
     // movment handler
     this.movement_handler = _movementHandler;
   }
@@ -47,6 +55,7 @@ export default class Note {
       }
       if (elem.id === "delete") {
         elem.addEventListener("click", this.removeNote.bind(this));
+        elem.addEventListener("click", this.deleteNote.bind(this));
       }
       if (elem.id === "edit") {
         elem.addEventListener("click", this.editNote.bind(this));
@@ -92,5 +101,20 @@ export default class Note {
       Note._removedCollection
     );
     Note.refreshLocalStorage();
+  }
+
+  deleteNote() {
+    if (this.current_section === "recycle-bin") {
+      this.checking = confirm("Вы уверены, что хотите удалить эту заметку?");
+      if (this.checking === true) {
+        for (let i = 0; i < Note._removedCollection.length; i++) {
+          if (Note._removedCollection[i].id === this.id) {
+            Note._removedCollection.splice(i, 1);
+          }
+        }
+        sections.renderRemovedElemsSection();
+        Note.refreshLocalStorage();
+      }
+    }
   }
 }

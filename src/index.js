@@ -13,7 +13,6 @@ sections._setStorageHandlers();
 
 // working with localStorage
 
-/* localStorage.clear(); */
 window.addEventListener("load", () => {
   // creating note items from localStorage
   if (localStorage.getItem("itemsArray")) {
@@ -32,6 +31,7 @@ window.addEventListener("load", () => {
       note.element.querySelector("#to-collection").style.display = "block";
       note.element.querySelector("#delete").style.display = "block";
       note.element.querySelector("#to-storage").style.display = "none";
+      note.current_section = "notes";
     }
 
     Note._folderCollection = JSON.parse(localStorage.getItem("itemsArray"))[1];
@@ -49,6 +49,7 @@ window.addEventListener("load", () => {
       note.element.querySelector("#to-collection").style.display = "none";
       note.element.querySelector("#to-storage").style.display = "block";
       note.element.querySelector("#delete").style.display = "block";
+      note.current_section = "folder";
     }
 
     Note._removedCollection = JSON.parse(localStorage.getItem("itemsArray"))[2];
@@ -65,22 +66,18 @@ window.addEventListener("load", () => {
 
       note.element.querySelector("#to-storage").style.display = "block";
       note.element.querySelector("#to-collection").style.display = "block";
-      note.element.querySelector("#delete").style.display = "none";
+      note.current_section = "recycle-bin";
     }
-
-    sections.renderStorageSection();
-    sections._setStorageHandlers();
-    mode.renderMode();
-    if (localStorage.getItem("mode")) {
-      let savedMode = localStorage.getItem("mode");
-      console.log(savedMode);
-      console.log(mode.current);
-      if (savedMode !== mode.current) {
-        mode.changeMode();
-        mode.renderMode();
-      } else {
-        mode.renderMode();
-      }
+  }
+  sections.renderStorageSection();
+  sections._setStorageHandlers();
+  mode.renderMode();
+  if (localStorage.getItem("mode")) {
+    if (localStorage.getItem("mode") !== mode.current) {
+      mode.changeMode();
+      mode.renderMode();
+    } else {
+      mode.renderMode();
     }
   }
 });

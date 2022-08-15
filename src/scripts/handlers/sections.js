@@ -15,6 +15,12 @@ export function moveItemsBetweenSections(
   fromSectionTwo,
   targetSection
 ) {
+  if (
+    this.current_section === "recycle-bin" &&
+    targetSection === Note._removedCollection
+  ) {
+    return;
+  }
   targetSection.push(this);
 
   // deleting from static props of Note class
@@ -32,22 +38,25 @@ export function moveItemsBetweenSections(
       Note.changedState = fromSectionTwo;
     }
   }
+
   setTimeout(() => {
     // buttons appearance
     if (targetSection == Note._folderCollection) {
       this.element.querySelector("#to-collection").style.display = "none";
       this.element.querySelector("#to-storage").style.display = "block";
       this.element.querySelector("#delete").style.display = "block";
+      this.current_section = "folder";
     }
     if (targetSection == Note._notesCollection) {
       this.element.querySelector("#to-collection").style.display = "block";
       this.element.querySelector("#delete").style.display = "block";
       this.element.querySelector("#to-storage").style.display = "none";
+      this.current_section = "notes";
     }
     if (targetSection == Note._removedCollection) {
       this.element.querySelector("#to-storage").style.display = "block";
       this.element.querySelector("#to-collection").style.display = "block";
-      this.element.querySelector("#delete").style.display = "none";
+      this.current_section = "recycle-bin";
     }
 
     renderSavedItems(Note.changedState);
