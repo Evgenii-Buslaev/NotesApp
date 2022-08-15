@@ -46,17 +46,28 @@ export function moveItemsBetweenSections(
       this.element.querySelector("#to-storage").style.display = "block";
       this.element.querySelector("#delete").style.display = "block";
       this.current_section = "folder";
+      this.date = null;
     }
     if (targetSection == Note._notesCollection) {
       this.element.querySelector("#to-collection").style.display = "block";
       this.element.querySelector("#delete").style.display = "block";
       this.element.querySelector("#to-storage").style.display = "none";
       this.current_section = "notes";
+      this.date = null;
     }
     if (targetSection == Note._removedCollection) {
       this.element.querySelector("#to-storage").style.display = "block";
       this.element.querySelector("#to-collection").style.display = "block";
       this.current_section = "recycle-bin";
+      this.date = new Date().getDate();
+      this.current_date = new Date().getDate();
+      let check = setInterval(() => {
+        this.current_date = new Date().getDate();
+        if (this.current_date - this.date === 7) {
+          this.deleteNote();
+          clearInterval(check);
+        }
+      }, 1000);
     }
 
     renderSavedItems(Note.changedState);
