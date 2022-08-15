@@ -36,9 +36,17 @@ export default class Mode {
     } else {
       this.current = this.light_mode;
     }
+    this.refreshLocalStorage();
   }
 
   renderMode() {
     this.mode_handler(this.current, this.dark_mode, this);
+  }
+
+  refreshLocalStorage() {
+    if (localStorage.getItem("mode")) {
+      localStorage.removeItem("mode");
+    }
+    localStorage.setItem("mode", this.current);
   }
 }

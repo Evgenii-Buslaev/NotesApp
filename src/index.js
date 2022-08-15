@@ -12,8 +12,8 @@ sections.renderStorageSection();
 sections._setStorageHandlers();
 
 // working with localStorage
-/* 
-localStorage.clear(); */
+
+/* localStorage.clear(); */
 window.addEventListener("load", () => {
   // creating note items from localStorage
   if (localStorage.getItem("itemsArray")) {
@@ -71,6 +71,17 @@ window.addEventListener("load", () => {
     sections.renderStorageSection();
     sections._setStorageHandlers();
     mode.renderMode();
+    if (localStorage.getItem("mode")) {
+      let savedMode = localStorage.getItem("mode");
+      console.log(savedMode);
+      console.log(mode.current);
+      if (savedMode !== mode.current) {
+        mode.changeMode();
+        mode.renderMode();
+      } else {
+        mode.renderMode();
+      }
+    }
   }
 });
 
