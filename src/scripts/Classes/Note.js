@@ -4,6 +4,20 @@ export default class Note {
   static _removedCollection = [];
   static changedState = Note._notesCollection;
 
+  static refreshLocalStorage() {
+    if (localStorage.getItem("itemsArray")) {
+      localStorage.removeItem("itemsArray");
+    }
+    localStorage.setItem(
+      "itemsArray",
+      JSON.stringify([
+        Note._notesCollection,
+        Note._folderCollection,
+        Note._removedCollection,
+      ])
+    );
+  }
+
   constructor(value, noteElement, _movementHandler) {
     // note-object properties
     this.value = value;
@@ -50,6 +64,8 @@ export default class Note {
       this.element.querySelector("p").removeAttribute("contenteditable");
       this.value = this.element.querySelector("p").innerText;
     });
+    Note.refreshLocalStorage();
+    console.log(localStorage.getItem("itemsArray"));
   }
 
   moveToFolder() {
@@ -58,6 +74,8 @@ export default class Note {
       Note._removedCollection,
       Note._folderCollection
     );
+    Note.refreshLocalStorage();
+    console.log(localStorage.getItem("itemsArray"));
   }
 
   moveToMain() {
@@ -66,6 +84,8 @@ export default class Note {
       Note._removedCollection,
       Note._notesCollection
     );
+    Note.refreshLocalStorage();
+    console.log(localStorage.getItem("itemsArray"));
   }
 
   removeNote() {
@@ -74,5 +94,7 @@ export default class Note {
       Note._folderCollection,
       Note._removedCollection
     );
+    Note.refreshLocalStorage();
+    console.log(localStorage.getItem("itemsArray"));
   }
 }

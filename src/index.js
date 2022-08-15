@@ -14,10 +14,14 @@ sections._setStorageHandlers();
 localStorage.clear();
 
 window.addEventListener("load", () => {
-  if (localStorage.getItem("notes_collection")) {
-    Note._notesCollection = JSON.parse(
-      localStorage.getItem("notes_collection")
-    );
+  if (localStorage.getItem("itemsArray")) {
+    Note._notesCollection = JSON.parse(localStorage.getItem("itemsArray"))[0];
+    Note._folderCollection = JSON.parse(localStorage.getItem("itemsArray"))[1];
+    Note._removedCollection = JSON.parse(localStorage.getItem("itemsArray"))[2];
+    console.log(Note._notesCollection);
+    console.log(Note._folderCollection);
+    console.log(Note._removedCollection);
+
     sections.renderStorageSection();
     sections._setStorageHandlers();
     mode.renderMode();

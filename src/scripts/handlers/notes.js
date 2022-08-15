@@ -27,13 +27,8 @@ export function addNote(className) {
   document.getElementById("input-text").value = "";
 
   className._notesCollection.push(note);
-  if (localStorage.getItem("notes_collection")) {
-    localStorage.removeItem("notes_collection");
-  }
-  localStorage.setItem(
-    "notes_collection",
-    JSON.stringify(className._notesCollection)
-  );
+  Note.refreshLocalStorage();
+  console.log(localStorage.getItem("itemsArray"));
 }
 
 export function removeInput() {
