@@ -50,7 +50,3 @@ export function renderSavedItems(itemsArray) {
     itemsArray[i].element.style.opacity = "1";
   }
 }
-
-export function pinHandler(note) {
-  console.log("pin");
-}

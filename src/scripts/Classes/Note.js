@@ -18,11 +18,6 @@ export default class Note {
         Note._removedCollection,
       ])
     );
-    console.log([
-      Note._notesCollection,
-      Note._folderCollection,
-      Note._removedCollection,
-    ]);
   }
 
   constructor(value, noteElement, _movementHandler) {
@@ -31,6 +26,7 @@ export default class Note {
     this._note = noteElement;
     this.id = Math.random();
     this.current_section = "notes";
+    this.pinned = false;
     // movment handler
     this.movement_handler = _movementHandler;
   }
@@ -45,7 +41,7 @@ export default class Note {
     this.buttons = this.element.querySelectorAll("div");
     this.buttons.forEach((elem) => {
       if (elem.id === "pin-btn") {
-        elem.addEventListener("click", this.pin_note);
+        elem.addEventListener("click", this.pinNote.bind(this));
       }
       if (elem.id === "to-storage") {
         elem.addEventListener("click", this.moveToMain.bind(this));
@@ -65,6 +61,26 @@ export default class Note {
 
   renderNote(parent) {
     parent.appendChild(this.element);
+  }
+
+  pinNote() {
+    if (this.pinned === false) {
+      this.element.querySelector(".note-functions").style.display = "none";
+      this.buttons.forEach((elem) => {
+        if (elem.id === "pin-btn") {
+          elem.children[0].src = "icons/note/pinned.png";
+        }
+      });
+      this.pinned = true;
+    } else {
+      this.element.querySelector(".note-functions").style.display = "flex";
+      this.buttons.forEach((elem) => {
+        if (elem.id === "pin-btn") {
+          elem.children[0].src = "icons/note/pin.png";
+        }
+      });
+      this.pinned = false;
+    }
   }
 
   editNote() {
