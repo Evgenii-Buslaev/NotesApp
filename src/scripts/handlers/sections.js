@@ -1,12 +1,15 @@
 import Note from "../Classes/Note.js";
 
-import { sections, mode } from "../singletons.js";
+import { sections, mode, menuPopup } from "../singletons.js";
 import { menuCont, menuBtns, areaCont } from "../constants.js";
 import { renderSavedItems } from "./notes.js";
 
 // menu-navigation
 
 menuCont.addEventListener("click", (e) => {
+  if (menuPopup.expanded === true) {
+    menuPopup.expandMenu();
+  }
   menuActiveSections(e.target);
 });
 

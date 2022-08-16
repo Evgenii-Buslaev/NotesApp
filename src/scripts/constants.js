@@ -4,9 +4,11 @@ const searchBar = document.querySelector(".search-bar");
 const modeIcon = document.querySelector('img[id="mode"]');
 const notes = document.getElementsByClassName("note");
 
-// menu buttons
+// menu section
 const menuBtns = document.querySelectorAll(".menu-nav-btn");
 const menuCont = document.getElementById("menu-container");
+
+const menuHeadBtn = document.querySelector(".menu-btn");
 
 // section elems
 const areaCont = document.getElementById("area-container");
@@ -34,6 +36,7 @@ export {
   searchBar,
   menuBtns,
   menuCont,
+  menuHeadBtn,
   storageBtn,
   areaCont,
   storage,

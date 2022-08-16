@@ -2,6 +2,7 @@
   width: 75vw;
   height: 85vh;
   margin: 1rem auto 0;
+  z-index: 5;
 }
 
 #area-container button,

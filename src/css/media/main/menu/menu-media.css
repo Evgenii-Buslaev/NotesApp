@@ -4,7 +4,7 @@
   }
 }
 
-@media (max-width: 1020px) {
+@media (max-width: 750px) {
   .menu-heading {
     font-size: 0;
     width: 0;

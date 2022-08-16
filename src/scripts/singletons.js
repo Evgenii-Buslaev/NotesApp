@@ -1,8 +1,11 @@
+import PopupWithMenu from "./Classes/PopupMenu.js";
 import Mode from "./Classes/Mode.js";
 import Sections from "./Classes/Sections.js";
 import Note from "./Classes/Note.js";
 
 import {
+  menuHeadBtn,
+  menuBtns,
   areaCont,
   storage,
   fullfilledStorageSection,
@@ -12,6 +15,8 @@ import {
 
 import { renderModeHandler } from "./handlers/mode.js";
 import { addNote, removeInput } from "./handlers/notes.js";
+
+let menuPopup = new PopupWithMenu(menuHeadBtn, menuBtns);
 
 let mode = new Mode("dark", "light", renderModeHandler);
 
@@ -25,4 +30,4 @@ let sections = new Sections(
   () => removeInput()
 );
 
-export { sections, mode };
+export { sections, mode, menuPopup };

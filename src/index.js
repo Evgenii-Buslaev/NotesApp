@@ -1,6 +1,9 @@
 import Note from "./scripts/Classes/Note.js";
 import { moveItemsBetweenSections } from "./scripts/handlers/sections.js";
-import { sections, mode } from "./scripts/singletons.js";
+import { sections, mode, menuPopup } from "./scripts/singletons.js";
+
+// menu popup
+menuPopup._setHandler();
 
 // default mode
 mode._setHandler();
