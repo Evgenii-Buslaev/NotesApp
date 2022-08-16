@@ -42,6 +42,7 @@ export function moveItemsBetweenSections(
   setTimeout(() => {
     // buttons appearance
     if (targetSection == Note._folderCollection) {
+      this.element.querySelector("#pin-btn").style.display = "block";
       this.element.querySelector("#to-collection").style.display = "none";
       this.element.querySelector("#to-storage").style.display = "block";
       this.element.querySelector("#delete").style.display = "block";
@@ -49,6 +50,7 @@ export function moveItemsBetweenSections(
       this.date = null;
     }
     if (targetSection == Note._notesCollection) {
+      this.element.querySelector("#pin-btn").style.display = "block";
       this.element.querySelector("#to-collection").style.display = "block";
       this.element.querySelector("#delete").style.display = "block";
       this.element.querySelector("#to-storage").style.display = "none";
@@ -58,6 +60,7 @@ export function moveItemsBetweenSections(
     if (targetSection == Note._removedCollection) {
       this.element.querySelector("#to-storage").style.display = "block";
       this.element.querySelector("#to-collection").style.display = "block";
+      this.element.querySelector("#pin-btn").style.display = "none";
       this.current_section = "recycle-bin";
       this.date = new Date().getDate();
       this.current_date = new Date().getDate();

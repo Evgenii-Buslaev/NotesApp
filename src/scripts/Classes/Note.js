@@ -18,6 +18,7 @@ export default class Note {
         Note._removedCollection,
       ])
     );
+    console.log(JSON.parse(localStorage.getItem("itemsArray")));
   }
 
   constructor(value, noteElement, _movementHandler) {
@@ -81,6 +82,7 @@ export default class Note {
       });
       this.pinned = false;
     }
+    Note.refreshLocalStorage();
   }
 
   editNote() {
