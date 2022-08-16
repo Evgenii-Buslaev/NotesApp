@@ -44,7 +44,7 @@
 }
 
 .note-functions {
-  display: flex;
+  display: none;
   justify-content: space-around;
   align-items: center;
   width: 15vw;
@@ -60,6 +60,10 @@
 #delete,
 #pin-btn img {
   border-radius: 5px;
+}
+
+#pin-btn {
+  opacity: 0;
 }
 
 #to-collection:hover,

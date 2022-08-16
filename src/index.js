@@ -26,16 +26,22 @@ window.addEventListener("load", () => {
       );
       if (Note._notesCollection[i].pinned === true) {
         note.pinned === false;
+        Note._notesCollection.splice(i, 1, note);
+        note.generateNote();
+        note.renderNote(document.querySelector(".notes"));
+        note._setHandlers();
+        note.pinNote();
+      } else {
+        Note._notesCollection.splice(i, 1, note);
+        note.generateNote();
+        note.renderNote(document.querySelector(".notes"));
+        note._setHandlers();
+        note.element.querySelector(".note-functions").style.display = "flex";
       }
-      Note._notesCollection.splice(i, 1, note);
-      note.generateNote();
-      note.renderNote(document.querySelector(".notes"));
-      note._setHandlers();
-      note.pinNote();
-
       note.element.querySelector("#to-collection").style.display = "block";
       note.element.querySelector("#delete").style.display = "block";
       note.element.querySelector("#to-storage").style.display = "none";
+      note.element.querySelector("#pin-btn").style.opacity = "1";
       note.current_section = "notes";
     }
 
@@ -48,16 +54,22 @@ window.addEventListener("load", () => {
       );
       if (Note._folderCollection[i].pinned === true) {
         note.pinned === false;
+        Note._folderCollection.splice(i, 1, note);
+        note.generateNote();
+        note.renderNote(document.querySelector(".notes"));
+        note._setHandlers();
+        note.pinNote();
+      } else {
+        Note._folderCollection.splice(i, 1, note);
+        note.generateNote();
+        note.renderNote(document.querySelector(".notes"));
+        note._setHandlers();
+        note.element.querySelector(".note-functions").style.display = "flex";
       }
-      Note._folderCollection.splice(i, 1, note);
-      note.generateNote();
-      note.renderNote(document.querySelector(".notes"));
-      note._setHandlers();
-      note.pinNote();
-
       note.element.querySelector("#to-collection").style.display = "none";
       note.element.querySelector("#to-storage").style.display = "block";
       note.element.querySelector("#delete").style.display = "block";
+      note.element.querySelector("#pin-btn").style.opacity = "1";
       note.current_section = "folder";
     }
 

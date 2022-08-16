@@ -16,6 +16,8 @@ export function addNote(className) {
   note.generateNote();
   note.renderNote(document.querySelector(".notes"));
   note._setHandlers();
+  note.element.querySelector(".note-functions").style.display = "flex";
+  note.element.querySelector("#pin-btn").style.opacity = "1";
 
   let notesCollection = document.querySelectorAll(".note");
   if (className._notesCollection.length === 0) {
