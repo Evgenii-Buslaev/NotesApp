@@ -1,7 +1,5 @@
 import Note from "./scripts/Classes/Note.js";
-
 import { moveItemsBetweenSections } from "./scripts/handlers/sections.js";
-// singletons
 import { sections, mode } from "./scripts/singletons.js";
 
 // default mode
@@ -12,8 +10,6 @@ sections.renderStorageSection();
 sections._setStorageHandlers();
 
 // working with localStorage
-/* localStorage.clear(); */
-
 window.addEventListener("load", () => {
   // creating note items from localStorage
   if (localStorage.getItem("itemsArray")) {

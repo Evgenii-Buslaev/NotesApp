@@ -67,7 +67,13 @@ export function moveItemsBetweenSections(
       let check = setInterval(() => {
         this.current_date = new Date().getDate();
         if (this.current_date - this.date === 7) {
-          this.deleteNote();
+          for (let i = 0; i < Note._removedCollection.length; i++) {
+            if (Note._removedCollection[i].id === this.id) {
+              Note._removedCollection.splice(i, 1);
+            }
+          }
+          Note.refreshLocalStorage();
+          sections.renderStorageSection();
           clearInterval(check);
         }
       }, 1000);
