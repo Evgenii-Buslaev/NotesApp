@@ -1,6 +1,5 @@
 // elems for mode
 const body = document.querySelector("body");
-const searchBar = document.querySelector(".search-bar");
 const modeIcon = document.querySelector('img[id="mode"]');
 const notes = document.getElementsByClassName("note");
 
@@ -9,6 +8,11 @@ const menuBtns = document.querySelectorAll(".menu-nav-btn");
 const menuCont = document.getElementById("menu-container");
 
 const menuHeadBtn = document.querySelector(".menu-btn");
+
+// search section
+const searchInput = document.getElementById("search");
+const searchBar = document.querySelector(".search-bar");
+const closeBtn = document.getElementById("close-btn");
 
 // section elems
 const areaCont = document.getElementById("area-container");
@@ -34,6 +38,8 @@ export {
   modeIcon,
   notes,
   searchBar,
+  searchInput,
+  closeBtn,
   menuBtns,
   menuCont,
   menuHeadBtn,
