@@ -41,14 +41,28 @@ export default class PopupWithMenu {
         });
       }
     } else {
-      for (let i = 0; i < this.menu_buttons.length; i++) {
-        this.menu_buttons[i].style.width = "20vw";
+      if (this.expanded === false) {
+        this.expanded = true;
+        this.menu_cont.style.zIndex = "10";
+        for (let i = 0; i < this.menu_buttons.length; i++) {
+          this.menu_buttons[i].style.width = "20vw";
+        }
+        this.menu_headings.forEach((elem) => {
+          elem.style.opacity = "1";
+          elem.style.fontSize = "1rem";
+          elem.style.width = "30vw";
+        });
+      } else {
+        this.expanded = false;
+        for (let i = 0; i < this.menu_buttons.length; i++) {
+          this.menu_buttons[i].style.width = "50px";
+        }
+        this.menu_headings.forEach((elem) => {
+          elem.style.opacity = "0";
+          elem.style.fontSize = "0";
+          elem.style.width = "0";
+        });
       }
-      this.menu_headings.forEach((elem) => {
-        elem.style.opacity = "1";
-        elem.style.fontSize = "1rem";
-        elem.style.width = "30vw";
-      });
     }
   }
 }
