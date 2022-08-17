@@ -72,6 +72,15 @@ export default class PopupWithSearch {
       if (Note._notesCollection.length === 0) {
         document.getElementById("notes-background").style.display = "none";
       }
+      for (
+        let i = 0;
+        i < document.querySelectorAll(".menu-nav-btn").length;
+        i++
+      ) {
+        document
+          .querySelectorAll(".menu-nav-btn")
+          [i].classList.remove("active");
+      }
       this.clearInput();
     }
   }
