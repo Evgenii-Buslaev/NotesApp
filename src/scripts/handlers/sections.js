@@ -1,7 +1,7 @@
 import Note from "../Classes/Note.js";
 
-import { sections, mode, menuPopup } from "../singletons.js";
-import { menuCont, menuBtns, areaCont } from "../constants.js";
+import { sections, mode, menuPopup, searchPopup } from "../singletons.js";
+import { menuCont, menuBtns, areaCont, searchInput } from "../constants.js";
 import { renderSavedItems } from "./notes.js";
 
 // menu-navigation

@@ -1,5 +1,6 @@
 import Note from "./Note.js";
 import { renderSavedItems } from "../handlers/notes.js";
+import { mode } from "../singletons.js";
 
 export default class Sections {
   static currentSection = "notes";
@@ -39,6 +40,7 @@ export default class Sections {
       this.parent.innerHTML = this.fullfieldStorage;
       renderSavedItems(Note._notesCollection);
     }
+    mode.renderMode();
   }
 
   renderCollectionSection() {
@@ -49,6 +51,7 @@ export default class Sections {
       this.parent.innerHTML = this.fullfieldStorage;
       renderSavedItems(Note._folderCollection);
     }
+    mode.renderMode();
   }
 
   renderRemovedElemsSection() {
@@ -59,5 +62,6 @@ export default class Sections {
       this.parent.innerHTML = this.fullfieldStorage;
       renderSavedItems(Note._removedCollection);
     }
+    mode.renderMode();
   }
 }
