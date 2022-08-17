@@ -20,7 +20,6 @@ mode._setHandler();
 sections.renderStorageSection();
 sections._setStorageHandlers();
 
-/* localStorage.clear(); */
 // working with localStorage
 window.addEventListener("load", () => {
   // creating note items from localStorage
