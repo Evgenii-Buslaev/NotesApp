@@ -1,6 +1,6 @@
+import Sections from "./Sections.js";
 import { closeBtn, searchBar, searchInput, storageBtn } from "../constants.js";
 import { renderSavedItems } from "../handlers/notes.js";
-import { sections } from "../singletons.js";
 import Note from "./Note.js";
 
 export default class PopupWithSearch {
@@ -24,7 +24,9 @@ export default class PopupWithSearch {
   }
 
   renderSearchArea() {
-    storageBtn.click();
+    if (Sections.currentSection !== "notes") {
+      storageBtn.click();
+    }
   }
 
   openPopup() {
@@ -62,8 +64,7 @@ export default class PopupWithSearch {
   clearInput() {
     this.input.value = "";
     PopupWithSearch.foundItems.length = 0;
-    sections.renderStorageSection();
-    sections._setStorageHandlers();
+    this.renderSearchArea();
     /*  if (window.screen.width <= 500) {
       this.element.style.width = "80vw";
       this.element.style.backgroundColor = "rgb(94, 93, 93)";

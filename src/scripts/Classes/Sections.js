@@ -2,6 +2,7 @@ import Note from "./Note.js";
 import { renderSavedItems } from "../handlers/notes.js";
 
 export default class Sections {
+  static currentSection = "notes";
   constructor(
     parent,
     storageSection,
@@ -31,6 +32,7 @@ export default class Sections {
   }
 
   renderStorageSection() {
+    Sections.currentSection = "notes";
     if (Note._notesCollection.length === 0) {
       this.parent.innerHTML = this.storage;
     } else {
@@ -40,6 +42,7 @@ export default class Sections {
   }
 
   renderCollectionSection() {
+    Sections.currentSection = "collection";
     if (Note._folderCollection.length === 0) {
       this.parent.innerHTML = this.notifications;
     } else {
@@ -49,6 +52,7 @@ export default class Sections {
   }
 
   renderRemovedElemsSection() {
+    Sections.currentSection = "recycle-bin";
     if (Note._removedCollection.length === 0) {
       this.parent.innerHTML = this.recycleBin;
     } else {

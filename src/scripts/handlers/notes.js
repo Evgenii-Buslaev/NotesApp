@@ -1,6 +1,7 @@
 import Note from "../Classes/Note.js";
 import { storageBtn } from "../constants.js";
 import { moveItemsBetweenSections } from "../handlers/sections.js";
+import { mode } from "../singletons.js";
 
 // input part
 export function addNote(className) {
@@ -50,5 +51,6 @@ export function renderSavedItems(itemsArray) {
   for (let i = 0; i < itemsArray.length; i++) {
     document.querySelector(".notes").appendChild(itemsArray[i].element);
     itemsArray[i].element.style.opacity = "1";
+    mode.renderMode();
   }
 }
