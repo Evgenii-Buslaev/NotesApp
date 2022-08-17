@@ -33,6 +33,8 @@ const removedElementsBackground = document.getElementById(
   "recycle-bin-background"
 );
 
+const searchPopup = document.getElementById("search-popup");
+
 export {
   body,
   modeIcon,
@@ -49,4 +51,5 @@ export {
   fullfilledStorageSection,
   collectionBackground,
   removedElementsBackground,
+  searchPopup,
 };
