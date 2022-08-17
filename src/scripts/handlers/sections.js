@@ -46,6 +46,7 @@ export function moveItemsBetweenSections(
     // buttons appearance
     if (targetSection == Note._folderCollection) {
       this.element.querySelector("#pin-btn").style.display = "block";
+      this.element.querySelector("#pin-btn").style.opacity = "1";
       this.element.querySelector("#to-collection").style.display = "none";
       this.element.querySelector("#to-storage").style.display = "block";
       this.element.querySelector("#delete").style.display = "block";
@@ -54,6 +55,7 @@ export function moveItemsBetweenSections(
     }
     if (targetSection == Note._notesCollection) {
       this.element.querySelector("#pin-btn").style.display = "block";
+      this.element.querySelector("#pin-btn").style.opacity = "1";
       this.element.querySelector("#to-collection").style.display = "block";
       this.element.querySelector("#delete").style.display = "block";
       this.element.querySelector("#to-storage").style.display = "none";
