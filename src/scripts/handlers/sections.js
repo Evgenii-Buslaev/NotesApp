@@ -1,11 +1,10 @@
 import Note from "../Classes/Note.js";
 
-import { sections, mode, menuPopup, searchPopup } from "../singletons.js";
-import { menuCont, menuBtns, areaCont, searchInput } from "../constants.js";
+import { sections, mode, menuPopup } from "../singletons.js";
+import { menuCont, menuBtns, areaCont } from "../constants.js";
 import { renderSavedItems } from "./notes.js";
 
 // menu-navigation
-
 menuCont.addEventListener("click", (e) => {
   if (menuPopup.expanded === true) {
     menuPopup.expandMenu();
@@ -69,6 +68,8 @@ export function moveItemsBetweenSections(
       this.current_section = "recycle-bin";
       this.date = new Date().getDate();
       this.current_date = new Date().getDate();
+
+      // deleting a note from recycle bin after 7 days automatically
       let check = setInterval(() => {
         this.current_date = new Date().getDate();
         if (this.current_date - this.date === 7) {

@@ -20,7 +20,7 @@ mode._setHandler();
 sections.renderStorageSection();
 sections._setStorageHandlers();
 
-// working with localStorage
+// working with localStorage, render saved items afred reload
 window.addEventListener("load", () => {
   // creating note items from localStorage
   if (localStorage.getItem("itemsArray")) {
@@ -92,7 +92,6 @@ window.addEventListener("load", () => {
       note.renderNote(document.querySelector(".notes"));
       note._setHandlers();
       note.element.querySelector(".note-functions").style.display = "flex";
-
       note.element.querySelector("#to-storage").style.display = "block";
       note.element.querySelector("#to-collection").style.display = "block";
       note.current_section = "recycle-bin";

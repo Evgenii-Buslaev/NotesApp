@@ -7,7 +7,6 @@ const modeBtn = document.querySelector(".mode");
 // menu section
 const menuBtns = document.querySelectorAll(".menu-nav-btn");
 const menuCont = document.getElementById("menu-container");
-
 const menuHeadBtn = document.querySelector(".menu-btn");
 
 // search section
