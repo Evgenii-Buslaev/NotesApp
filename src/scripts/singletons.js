@@ -5,6 +5,7 @@ import Sections from "./Classes/Sections.js";
 import Note from "./Classes/Note.js";
 
 import {
+  modeBtn,
   menuHeadBtn,
   menuBtns,
   areaCont,
@@ -29,7 +30,7 @@ let searchPopup = new PopupWithSearch(
 
 let menuPopup = new PopupWithMenu(menuHeadBtn, menuBtns);
 
-let mode = new Mode("dark", "light", renderModeHandler);
+let mode = new Mode("dark", "light", renderModeHandler, modeBtn);
 
 let sections = new Sections(
   areaCont,

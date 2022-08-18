@@ -1,9 +1,10 @@
 export default class Mode {
-  constructor(dark, light, modeHandler) {
+  constructor(dark, light, modeHandler, modeBtn) {
     // state
     this.dark_mode = dark;
     this.light_mode = light;
     this.current = light;
+    this.toggle_button = modeBtn;
 
     // values
     this.light_background_colors = {
@@ -22,12 +23,8 @@ export default class Mode {
   }
 
   _setHandler() {
-    document
-      .querySelector(".mode")
-      .addEventListener("click", () => this.changeMode());
-    document
-      .querySelector(".mode")
-      .addEventListener("click", () => this.renderMode());
+    this.toggle_button.addEventListener("click", () => this.changeMode());
+    this.toggle_button.addEventListener("click", () => this.renderMode());
   }
 
   changeMode() {

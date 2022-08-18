@@ -2,6 +2,7 @@
 const body = document.querySelector("body");
 const modeIcon = document.querySelector('img[id="mode"]');
 const notes = document.getElementsByClassName("note");
+const modeBtn = document.querySelector(".mode");
 
 // menu section
 const menuBtns = document.querySelectorAll(".menu-nav-btn");
@@ -37,6 +38,7 @@ export {
   body,
   modeIcon,
   notes,
+  modeBtn,
   searchBar,
   searchInput,
   closeBtn,
