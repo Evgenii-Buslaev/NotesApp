@@ -12,12 +12,20 @@ import {
   fullfilledStorageSection,
   collectionBackground,
   removedElementsBackground,
+  searchBar,
+  searchInput,
+  closeBtn,
+  storageBtn,
 } from "./constants.js";
 
 import { renderModeHandler } from "./handlers/mode.js";
 import { addNote, removeInput } from "./handlers/notes.js";
 
-let searchPopup = new PopupWithSearch();
+let searchPopup = new PopupWithSearch(
+  { searchBar, searchInput, closeBtn },
+  storageBtn,
+  menuBtns
+);
 
 let menuPopup = new PopupWithMenu(menuHeadBtn, menuBtns);
 

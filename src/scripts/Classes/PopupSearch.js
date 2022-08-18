@@ -1,15 +1,19 @@
 import Sections from "./Sections.js";
 import Note from "./Note.js";
-import { closeBtn, searchBar, searchInput, storageBtn } from "../constants.js";
 import { mode } from "../singletons.js";
 import { renderSavedItems } from "../handlers/notes.js";
 
 export default class PopupWithSearch {
   static foundItems = [];
-  constructor() {
+  constructor({ searchBar, searchInput, closeBtn }, storageBtn, menuBtns) {
+    // nodes
     this.element = searchBar;
     this.input = searchInput;
     this.clear = closeBtn;
+
+    this.menu_buttons = menuBtns;
+    this.to_storage = storageBtn;
+    // state
     this.popup = "closed";
   }
 
@@ -25,7 +29,7 @@ export default class PopupWithSearch {
 
   renderSearchArea() {
     if (Sections.currentSection !== "notes") {
-      storageBtn.click();
+      this.to_storage.click();
     }
   }
 
@@ -72,14 +76,8 @@ export default class PopupWithSearch {
       if (Note._notesCollection.length === 0) {
         document.getElementById("notes-background").style.display = "none";
       }
-      for (
-        let i = 0;
-        i < document.querySelectorAll(".menu-nav-btn").length;
-        i++
-      ) {
-        document
-          .querySelectorAll(".menu-nav-btn")
-          [i].classList.remove("active");
+      for (let i = 0; i < this.menu_buttons.length; i++) {
+        this.menu_buttons[i].classList.remove("active");
       }
       this.clearInput();
     }

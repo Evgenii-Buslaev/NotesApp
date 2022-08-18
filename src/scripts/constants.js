@@ -46,6 +46,7 @@ export {
   storageBtn,
   areaCont,
   storage,
+  storageBackground,
   fullfilledStorageSection,
   collectionBackground,
   removedElementsBackground,
